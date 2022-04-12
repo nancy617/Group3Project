@@ -1,0 +1,609 @@
+<!--Progress "Wizard"-->
+<div class="progressCircle">
+    <a class="notCurrent">Enter Zip Code</a>
+    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
+    <a class="notCurrent">Pick a Cuisine</a>
+    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
+    <a class="notCurrent">Pick a Chef</a>
+    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
+    <a class="current">Pick a Meal</a>
+    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
+    <a class="notCurrent">Finalize Order</a>
+
+</div>
+
+<!--Need to get chef's name from database-->
+<h1>Chef Name's Weekly Meal Plan</h1>
+<h2>Please Select at least one meal to checkout</h2>
+
+<div class="daySelector">
+    <button class="day">Monday</button>
+    <button class="day">Tuesday</button>
+    <button class="day">Wednesday</button>
+    <button class="day">Thursday</button>
+    <button class="day">Friday</button>
+    <button class="day">Saturday</button>
+    <Button class="day">Sunday</Button>
+</div>
+
+<h3>Ethni-Cuisine Menu</h3>
+
+<!--Row 1-->
+<!--Food Images from Database-->
+<div>
+    <table class="mealTable">
+        <tr>
+            <td class="mealTime">Breakfast</td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+
+             <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+            <td></td>
+            <td></td> 
+            <td></td>
+
+            <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+        </tr>
+
+        
+    </table>
+    </div>
+
+
+    <div>
+        <table class="textTable">
+            <!--Food Names from Database-->
+        <tr>
+            <td class="foodName">Food 1</td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="foodName">Food 2</td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="foodName">Food 3</td>
+        </tr>
+
+
+        </table>
+
+    </div>
+
+    <div>
+        <table class="amountTable">
+            <!--Needs Javascript Implementation-->
+        <tr>
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR1a" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR1b" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR1c" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+
+        </tr>
+
+        </table>
+
+    </div>
+
+<!--Row 2-->
+    <!--Food Images from Database-->
+<div>
+    <table class="mealTable">
+        <tr>
+            <td class="mealTime">Lunch</td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+             <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+
+            <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+        </tr>
+
+        
+    </table>
+    </div>
+
+
+    <div>
+        <table class="textTable">
+            <!--Food Names from Database-->
+        <tr>
+            <td class="foodName">Food 1</td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="foodName">Food 2</td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="foodName">Food 3</td>
+        </tr>
+
+
+        </table>
+
+    </div>
+
+    <div>
+        <table class="amountTable">
+            <!--Needs Javascript Implementation-->
+        <tr>
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR2a" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR2b" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR2c" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+
+        </tr>
+
+        </table>
+
+    </div>
+
+<!--Row 3-->
+    <!--Food Images from Database-->
+<div>
+    <table class="mealTable">
+        <tr>
+            <td class="mealTime">Dinner</td>
+
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+
+            <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+
+             <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+
+            <td>
+                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+            </td>
+
+        </tr>
+
+        
+    </table>
+    </div>
+
+
+    <div>
+        <table class="textTable">
+            <!--Food Names from Database-->
+        <tr>
+            <td class="foodName">Food 1</td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="foodName">Food 2</td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="foodName">Food 3</td>
+        </tr>
+
+
+        </table>
+
+    </div>
+
+    <div>
+        <table class="amountTable">
+            <!--Needs Javascript Implementation-->
+        <tr>
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR3a" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR3b" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td>
+                <button class="decrease">-</button>
+            </td>
+
+            <td>
+                <input id="amountInputR3c" type="number" min="0">
+            </td>
+
+            <td>
+                <button class="increase">+</button>
+            </td>
+
+
+        </tr>
+
+        </table>
+
+    </div>
+
+    <div>
+        <nav>
+            <a class="routing" href="FindChef">Back</a>
+            <a class="routing" href="OrderSummary">Continue</a>
+        </nav>
+   </div>
+
+<!--Testing Modals-->
+<!-- The Modal -->
+<!-- <div id="myModal" class="modal"> -->
+<!--  -->
+    <!-- Modal content -->
+    <!-- <div class="modal-content"> -->
+      <!-- <span class="close">&times;</span> -->
+        <!-- Where the popup design goes; will need to query the database for information -->
+        <!-- <table class="popupTable"> -->
+            <!-- <tr> -->
+                <!-- <td></td> -->
+                <!-- <td></td>  -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+<!--               -->
+<!--                 -->
+<!--                  -->
+<!--  -->
+                <!-- <td class="foodName">Name of Food Item here</td> -->
+<!--      -->
+                <!-- <td></td> -->
+                <!-- <td></td>  -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+<!--      -->
+                <!-- <td> -->
+                    <!-- <img class="chefImage" src="assets/Images/temporaryFoodImage.png"> -->
+                <!-- </td> -->
+<!--      -->
+            <!-- </tr> -->
+<!--  -->
+<!--      -->
+<!--              -->
+        <!-- </table> -->
+<!--  -->
+        <!-- <p class="chefName">Cooked by Chef Name Here</p> -->
+<!--                 -->
+<!--   -->
+        <!-- <img class="popupFoodImage" src="assets/Images/temporaryFoodImage.png"> -->
+<!--  -->
+        <!-- <p class="foodName">Food Name goes here Price: $###.##</p> -->
+<!--              -->
+        <!-- <table class="infoHeaderTable"> -->
+            <!-- <tr> -->
+                <!-- <td></td> -->
+                <!-- <td></td>  -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+<!--               -->
+<!--                 -->
+<!--                  -->
+<!--  -->
+                <!-- <td class="infoHeader">Ingredients</td> -->
+<!--      -->
+                <!-- <td></td> -->
+                <!-- <td></td>  -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+<!--      -->
+                <!-- <td class="infoHeader">Interesting Facts</td> -->
+<!--                  -->
+<!--      -->
+            <!-- </tr> -->
+<!--  -->
+<!--      -->
+<!--              -->
+        <!-- </table> -->
+<!--  -->
+        <!-- <table class="infoBodyTable"> -->
+            <!-- <tr> -->
+                <!-- <td></td> -->
+                <!-- <td></td>  -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+<!--                 -->
+<!--                  -->
+<!--  -->
+                <!-- <td class="infoBody">Ingredients list goes here</td> -->
+<!--      -->
+                <!-- <td></td> -->
+                <!-- <td></td>  -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+<!--                  -->
+<!--                  -->
+<!--                 -->
+<!--      -->
+                <!-- <td class="infoBody">Interesting facts go here</td> -->
+<!--                  -->
+<!--      -->
+            <!-- </tr> -->
+<!--  -->
+<!--      -->
+<!--              -->
+        <!-- </table> -->
+<!--          -->
+<!--  -->
+<!--  -->
+    <!-- </div> -->
+<!--  -->
+<div class="panel-footer" style="margin-top: 600px">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Help Center</th>
+          <th>Services</th>
+          <th>Career</th>
+          <th>Social Media</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="FAQs">FAQS</a></td>
+          <td><a href="FindChef"> Find a Chef</a></td>
+          <td><a href="chefsignup1"> Register as a chef
+             </a></td>
+          <td>
+            <i
+              class="fa fa-facebook-square"
+              style="color: #4267b2; margin-right: 5px"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fa fa-pinterest"
+              style="color: red; margin-right: 5px"
+            ></i>
+            <i
+              class="fa fa-twitter"
+              style="color: #1da1f2; margin-right: 5px"
+            ></i>
+            <i
+              class="fa fa-youtube-square"
+              style="color: red; margin-right: 5px"
+            ></i>
+            <i
+              class="fa fa-instagram"
+              style="color: #8a3ab9"
+              aria-hidden="true"
+            ></i>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="Contact"> Contact Us</a></td>
+          
+        </tr>
+        <tr>
+          <td><a href="Terms">Terms of Services</a></td>
+        </tr>
+        <tr>
+          <td><a href="Privacypolicy">Privacy Policy</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="copy">
+   <p> Copyright 2022 All Copy Rights Reserved | Designed and Developed by Ethni-Connect Group</p>
+  
+  </div>
+  
+
+
+
+
+
+   
+            

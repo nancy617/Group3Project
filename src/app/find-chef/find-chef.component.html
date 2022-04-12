@@ -1,0 +1,137 @@
+<!--Progress "Wizard"-->
+<div class="progressCircle">
+    <a class="notCurrent">Enter Zip Code</a>
+    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
+    <a class="notCurrent">Pick a Cuisine</a>
+    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
+    <a class="current">Pick a Chef</a>
+    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
+    <a class="notCurrent">Pick a Meal</a>
+    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
+    <a class="notCurrent">Finalize Order</a>
+
+</div>
+
+<!--Need to replace # with the number of chefs queryed with the -->
+<h1>We found # chefs in your area!</h1>
+<h1>We found {{chefs.length}} chefs in your area!</h1>
+
+
+<div class="chefInformation">
+  <table>
+    <tr *ngFor="let chef of chefs" >
+      <img class="chefImage" [src]="chef.chef_image" width="400px" height="400px" style="line-height: 300px">
+      <td class="chefInfo"> <h1>{{chef.chef_fname}}</h1><br>
+        {{chef.chef_emailid}}<br>
+        {{chef.chef_experience}} years Experience<br>
+        How Long their account has existed?<br>
+        Number of reviews received<br>
+        Method of Delivery or Pickup.
+        </td>
+    </tr>
+
+  </table>
+
+</div>
+
+<!--Need to use data from database and add button changing functionality-->
+<div class="chefInformation">
+    <table>
+        <tr>
+            <td>
+                <input class="leftArrow" type="image" src="assets/Images/findChefArrow.png">
+            </td>
+            <td>
+                <img class="chefImage" src="assets/Images/temporaryFoodImage.png" width="400px" height="400px" style="line-height: 300px">
+            </td>
+            <td></td>
+            <td class="chefInfo">Chef Text Information Here<br>
+                Including Location<br>
+                Cooking Experience<br>
+                How Long their account has existed?<br>
+                Number of reviews received<br>
+                Method of Delivery or Pickup.
+                </td>
+                <td>
+                    <input class="rightArrow" type="image" src="assets/Images/findChefArrow.png">
+                </td>
+
+        </tr>
+        
+
+    </table>
+
+    <div>
+        <a class="chefQuote">"Chef Quote from database goes here." -Chef Name
+        </a>
+    </div>
+
+    <div>
+        <nav>
+            <a class="routing" href="SelectCuisine">Back</a>
+            <a class="routing" href="SelectMenu">Continue</a>
+        </nav>
+   </div>
+
+    
+
+</div>
+<div class="panel-footer" >
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Help Center</th>
+        <th>Services</th>
+        <th>Career</th>
+        <th>Social Media</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="FAQs">FAQS</a></td>
+        <td><a href="FindChef"> Find a Chef</a></td>
+        <td><a href="chefsignup1"> Register as a chef
+           </a></td>
+        <td>
+          <i
+            class="fa fa-facebook-square"
+            style="color: #4267b2; margin-right: 5px"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="fa fa-pinterest"
+            style="color: red; margin-right: 5px"
+          ></i>
+          <i
+            class="fa fa-twitter"
+            style="color: #1da1f2; margin-right: 5px"
+          ></i>
+          <i
+            class="fa fa-youtube-square"
+            style="color: red; margin-right: 5px"
+          ></i>
+          <i
+            class="fa fa-instagram"
+            style="color: #8a3ab9"
+            aria-hidden="true"
+          ></i>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="Contact"> Contact Us</a></td>
+        
+      </tr>
+      <tr>
+        <td><a href="Terms">Terms of Services</a></td>
+      </tr>
+      <tr>
+        <td><a href="Privacypolicy">Privacy Policy</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <div class="copy">
+   <p> Copyright 2022 All Copy Rights Reserved | Designed and Developed by Ethni-Connect Group</p>
+  
+  </div>
+  

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="header"></div>
+    <br />
+
+    <h1 style="text-align: center">Meet Our Chef</h1>
+    <br />
+    <div class="box1">
+      <ul>
+        <li>
+          <img
+            src="assets/Images/enrique olvera.jpeg"
+            alt="enrique olvera"
+            style="height: 300px"
+          />
+        </li>
+        <li style="width: auto">
+          <h1>Enrique Olvera</h1>
+          <i class="fas fa-map-marker-alt" *ngFor="let data of data"></i>
+          <p>
+            <b>Cooking Experience: </b>
+            <u style="color: darkblue"> {{ data.cook_exp }} </u>Years
+          </p>
+          <p><b>Member Since: </b>{{ data.memb_since | date: "shortDate" }}</p>
+          <p>
+            <b>Received:</b> <u><b style="color: darkblue"> 0 </b></u>Reviews
+          </p>
+          <br /><button>Write a review</button>
+        </li>
+        <li style="width: 100px"></li>
+        <li>
+          <h3>Chef's Contact Information</h3>
+          <p style="color: darkblue"><b>☎️ Phone#: </b>{{ data.phone }}</p>
+          <p style="color: darkblue">
+            <b>📧&nbsp; Email: </b>{{ data.emailid }}
+          </p>
+          <p style="color: darkblue">
+            <b>🏠 Food Pickup Address: </b>{{ data.address }}
+          </p>
+          <br />
+          <h4>Payment Method(s):</h4>
+          <P style="color: darkblue">{{ data.payment }} </P>
+          <button style="font-size: 14px; height: 40px">
+            <b>Check Customer orders</b>
+          </button>
+          <br /><button>Contact Us</button> <br /><button>
+            Continue Booking
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="box2">
+      <ul>
+        <li style="width: 450px; height: auto">
+          <b style="font-size: 24px">Customer reviews & ratings &nbsp </b>
+          <select style="font-size: 14px">
+            <option value="Most recent reviews">Most recent reviews</option>
+            <option value="Most helpful reviews">Most helpful reviews</option>
+            <option value="Review with pictures">Review with pictures</option>
+          </select>
+        </li>
+
+        <li style="width: 100px"></li>
+        <li style="color: darkblue; height: auto">
+          <u> <b style="font-size: 16px; color: red">&nbsp 2 &nbsp</b></u
+          >&nbsp Customer Rated 5 Stars<br />
+          <u> <b style="font-size: 16px; color: red">&nbsp 0 &nbsp</b></u
+          >&nbsp Customer Rated 4 Stars<br />
+          <u> <b style="font-size: 16px; color: red">&nbsp 0 &nbsp</b></u
+          >&nbsp Customer Rated 3 Stars<br />
+          <u> <b style="font-size: 16px; color: red">&nbsp 0 &nbsp</b></u
+          >&nbsp Customer Rated 2 Stars<br />
+          <u> <b style="font-size: 16px; color: red">&nbsp 0 &nbsp</b></u
+          >&nbsp Customer Rated 1 Stars
+        </li>
+      </ul>
+
+      <div class="box3">
+        <ul>
+          <li>
+            <img
+              src="/image/LisaH.png"
+              alt="Lisa H"
+              style="margin: 0 0 0 50px"
+            />
+            <h3 style="margin: 0 0 0 50px">Lisa H</h3>
+            <p>Reviewed on Feb 15, 2022</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i> <b> Best Chef Ever!</b>
+
+            <p style="width: 350px; height: auto; text-indent: 25px">
+              Chef Enrique Olvera is definitely one of the best chefs we have
+              ever met. All the dishes he made are so delicous and authentic
+              Mexian cuisine style! The prices are also very reasonale. He
+              respond to my messeges very fast as well. I would recomond him to
+              freinds and familys!
+            </p>
+            <b>
+              <em> 5 people found this helpful&nbsp&nbsp&nbsp&nbsp&nbsp </em></b
+            ><button>Helpful</button>
+          </li>
+          <li style="width: 20px"></li>
+
+          <li>
+            <img
+              src="/image/Venessa L.png"
+              alt="Venessa L"
+              style="margin: 0 0 0 50px"
+            />
+            <h3 style="margin: 0 0 0 50px">Venessa L</h3>
+            <p>Reviewed on Feb 12, 2022</p>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i> <b>FIVE STAR CHEF!!</b>
+
+            <p style="width: 350px; height: auto; text-indent: 25px">
+              I want to rate Chef Enrique Olvera FIVE stars for his most
+              professional cooking skills and excellent customer services. I had
+              many food allergies. Chef Enrique Olvera was patient to answer my
+              phone calls and helped me to made tasted and nutritious dishes by
+              avoding all the allergic ingredients!
+            </p>
+            <b>
+              <em> 5 people found this helpful&nbsp&nbsp&nbsp&nbsp&nbsp </em></b
+            ><button>Helpful</button>
+          </li>
+        </ul>
+      </div>
+      <div class="box4">
+        <a href="#" class="next round">🔘</a>
+        <a href="#" class="previous round">⚫</a>
+        <a href="#" class="next round">🔘</a>
+      </div>
+    </div>
+  </body>
+  <div class="panel-footer">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Help Center</th>
+          <th>Services</th>
+          <th>Career</th>
+          <th>Social Media</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>FAQS</td>
+          <td>Find a Chef</td>
+          <td>Become a chef</td>
+          <td>
+            <i
+              class="fa fa-facebook-square"
+              style="color: #4267b2; margin-right: 5px"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fa fa-pinterest"
+              style="color: red; margin-right: 5px"
+            ></i>
+
+            <i
+              class="fa fa-twitter"
+              style="color: #1da1f2; margin-right: 5px"
+            ></i>
+            <i
+              class="fa fa-youtube-square"
+              style="color: red; margin-right: 5px"
+            ></i>
+            <i
+              class="fa fa-instagram"
+              style="color: #8a3ab9"
+              aria-hidden="true"
+            ></i>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Contact Us</td>
+          <td>Find an Interpreter</td>
+          <td>Become a Interpreter</td>
+        </tr>
+
+        <tr>
+          <td>Terms of Services</td>
+        </tr>
+
+        <tr>
+          <td>Privacy Policy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="copy">
+    <p>
+      Copyright 2022 All Copy Rights Reserved | Designed and Developed by
+      Ethni-Connect Group
+    </p>
+  </div>
+</html>

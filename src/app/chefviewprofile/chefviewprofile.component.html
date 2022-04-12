@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      My Profile <br />
+      <button
+        style="color: darkblue; background-color: lightgray; font-size: 12px"
+      >
+        <a href="chefeditprofile">Edit my profile</a>
+      </button>
+    </h1>
+    <br />
+    <div class="box1">
+      <ul>
+        <li>
+          <img
+            src="assets/Images/enrique olvera.jpeg"
+            alt="enrique olvera"
+            style="height: 300px"
+          />
+        </li>
+        <li style="width: auto">
+          <h1>Enrique Olvera</h1>
+          <i class="fas fa-map-marker-alt" *ngFor="let data of data"></i>
+          <p>
+            <b>Cooking Experience: </b>
+            <u style="color: darkblue"> &nbsp;{{ data.cook_exp }} &nbsp;</u
+            >Years
+          </p>
+          <p><b>Member Since: </b>{{ data.memb_since | date: "shortDate" }}</p>
+          <p>
+            <b>Received:</b>
+            <u><b style="color: darkblue"> &nbsp; 2 &nbsp;</b></u
+            >Reviews
+          </p>
+          <b style="color: red">★★★★★</b>
+          <!-- <i class="fa-solid fa-star"></i>★★★★☆☆☆☆☆
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i> -->
+          <!-- <i class="fa-solid fa-star" style="color:darkgray"></i> (DB Review DATA) -->
+          <br /><button>See all Reviews</button>
+        </li>
+        <li style="width: 100px"></li>
+        <li>
+          <h4 style="margin-top: 25px">Contact Information:</h4>
+          <p style="color: darkblue"><b>☎️ Phone#: </b>{{ data.phone }}</p>
+          <p style="color: darkblue">
+            <b>📧&nbsp; Email: </b>{{ data.emailid }}
+          </p>
+          <p style="color: darkblue">
+            <b>🏠 Food Pickup Address: </b>{{ data.address }}
+          </p>
+          <br />
+          <h4>Payment Method(s):</h4>
+          <P style="color: darkblue">{{ data.payment }} </P>
+          <button style="font-size: 14px; height: 40px">
+            <b>Check Customer orders</b>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="box2">
+      <ul>
+        <li>
+          <button style="font-size: 24px; height: 40px; margin-left: 100px">
+            <b> Edit My Featured Cuisines</b>
+          </button>
+          <br />
+          <br /><img
+            src="assets/Images/Featured Cuisines.png"
+            alt="Featured Cuisines"
+            style="width: 400px"
+          />
+        </li>
+
+        <li>
+          <button style="font-size: 24px; height: 40px; margin-left: 100px">
+            <b>Edit My Weekly Food Menu</b></button
+          ><br />
+          <br />
+          <img
+            src="assets/Images/Ehni-Cuissine Menu.png"
+            alt="Featured Cuisines"
+            style="width: 400px"
+          />
+          <!-- <iframe src="createmenu" height="320px"  width="450px" title="Chef Weekly Menu"></iframe> -->
+        </li>
+      </ul>
+    </div>
+  </body>
+  <div class="panel-footer">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Help Center</th>
+          <th>Services</th>
+          <th>Career</th>
+          <th>Social Media</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>FAQS</td>
+          <td>Find a Chef</td>
+          <td>Become a chef</td>
+          <td>
+            <i
+              class="fa fa-facebook-square"
+              style="color: #4267b2; margin-right: 5px"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fa fa-pinterest"
+              style="color: red; margin-right: 5px"
+            ></i>
+
+            <i
+              class="fa fa-twitter"
+              style="color: #1da1f2; margin-right: 5px"
+            ></i>
+            <i
+              class="fa fa-youtube-square"
+              style="color: red; margin-right: 5px"
+            ></i>
+            <i
+              class="fa fa-instagram"
+              style="color: #8a3ab9"
+              aria-hidden="true"
+            ></i>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Contact Us</td>
+          <td>Find an Interpreter</td>
+          <td>Become a Interpreter</td>
+        </tr>
+
+        <tr>
+          <td>Terms of Services</td>
+        </tr>
+
+        <tr>
+          <td>Privacy Policy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="copy">
+    <p>
+      Copyright 2022 All Copy Rights Reserved | Designed and Developed by
+      Ethni-Connect Group
+    </p>
+  </div>
+</html>
