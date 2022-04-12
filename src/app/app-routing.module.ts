@@ -40,7 +40,7 @@ import { ChefAuthGuard } from './auth/chefAuth.gaurd';
 const routes: Routes = [
 
  {component:HomeComponent,path:""},
- {component:ServicesComponent,path:"Services"},
+//  {component:ServicesComponent,path:"Services"},
  {component:AboutComponent,path:"About"},
  {component:ContactComponent,path:"Contact"},
  {component:LoginComponent,path:"Login"},
@@ -49,8 +49,8 @@ const routes: Routes = [
  {component:PrivacypolicyComponent,path:"Privacypolicy"},
  {component:TermsComponent, path:"Terms"},
  {component:PersonalacctComponent, path:"personalacct"},
- {component:BusinessacctComponent, path:"businessacct"},
- {component:Chefsignup1Component, path: "chefsignup1"},
+//  {component:BusinessacctComponent, path:"businessacct"},
+//  {component:Chefsignup1Component, path: "chefsignup1"},
  {component:ChefemailcompleteComponent, path: "chefemailcomplete"},
  {component:ChefloginsetupComponent, path:"chefloginsetup"},
  {component:ChefprofilesetupComponent, path:"chefprofilesetup", canActivate:[AuthGuard,ChefAuthGuard] },
