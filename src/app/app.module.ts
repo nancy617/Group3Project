@@ -47,6 +47,7 @@ import { LoaderInterceptor } from './loader.interceptor';
 import { LoaderComponent } from './loader/loader.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
+import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
     FooterComponent,
     LoaderComponent,
     OrderHistoryComponent,
-    ChefReviewsComponent
+    ChefReviewsComponent,
+    CustomereditprofileComponent
 
   ],
   imports: [
