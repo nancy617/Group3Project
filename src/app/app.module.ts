@@ -45,7 +45,12 @@ import { AuthGuard } from './auth/auth.gaurd';
 import { ChefAuthGuard } from './auth/chefAuth.gaurd';
 import { LoaderInterceptor } from './loader.interceptor';
 import { LoaderComponent } from './loader/loader.component';
+
 import { ReserpwdemailcompleteComponent } from './reserpwdemailcomplete/reserpwdemailcomplete.component';
+
+
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
 
 
 
@@ -88,7 +93,12 @@ import { ReserpwdemailcompleteComponent } from './reserpwdemailcomplete/reserpwd
     CustomerreviewsuccessComponent,
     FooterComponent,
     LoaderComponent,
-    ReserpwdemailcompleteComponent
+
+    ReserpwdemailcompleteComponent,
+
+    OrderHistoryComponent,
+    ChefReviewsComponent
+
 
   ],
   imports: [
