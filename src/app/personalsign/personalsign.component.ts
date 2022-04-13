@@ -27,6 +27,7 @@ export class PersonalsignComponent implements OnInit {
     if (this.registerForm.invalid || this.registerForm.value.password != this.registerForm.value.confirmPassword ) {
       return false;
     }
+    this._CustomerSignupDataService.prepareRequestWithParameters(this.registerForm.value.email,this.registerForm.value.password)
     this._CustomerSignupDataService.queryTheServer({
       email:this.registerForm.value.email,
       password:this.registerForm.value.password

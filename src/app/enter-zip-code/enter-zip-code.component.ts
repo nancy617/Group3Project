@@ -31,6 +31,10 @@ export class EnterZipCodeComponent implements OnInit {
       next:res=>{
         const data:any=res
         console.log(res)
+        if(!data){
+          alert("Sorry we are yet to serve this area!")
+          return 
+        }
         if(data.cuisineCategory.length>0){
           this.router.navigate([`/SelectCuisine/${data.zipCode}`])
         }else{

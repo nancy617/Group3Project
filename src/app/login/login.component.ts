@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         }
         localStorage.setItem('loginId',data.loginId)
         localStorage.setItem('isChef',data.chef)
-        localStorage.setItem('email',data.email)
+        
       } ,
       error: err=>{
         console.log(err)
