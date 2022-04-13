@@ -48,11 +48,11 @@ export class CreatemenuComponent implements OnInit {
     breakfast: new FormArray(
       this.numberOfMeals.map(num=>{
         return new FormGroup({
-            menu_item_name: new FormControl('',[Validators .required]),
+            item_name: new FormControl('',[Validators .required]),
             menu_item_price: new FormControl('',[Validators.required]),
             item_ingredients:new FormControl('',[Validators.required ]),
             item_intresting_facts:new FormControl('',[Validators.required ]),
-            image:new FormControl('',[Validators.required]),
+            menu_item_image:new FormControl('',[Validators.required]),
           //  week:new FormControl(this.activeDay,[Validators.required ]),
           });
         })
@@ -60,11 +60,11 @@ export class CreatemenuComponent implements OnInit {
     lunch: new FormArray(
       this.numberOfMeals.map(num=>{
         return new FormGroup({
-            menu_item_name: new FormControl('',[Validators .required]),
+            item_name: new FormControl('',[Validators .required]),
             menu_item_price: new FormControl('',[Validators.required]),
             item_ingredients:new FormControl('',[Validators.required ]),
             item_intresting_facts:new FormControl('',[Validators.required ]),
-            image:new FormControl('',[Validators.required]),
+            menu_item_image:new FormControl('',[Validators.required]),
            // week:new FormControl(this.activeDay,[Validators.required ]),
           });
         })
@@ -72,11 +72,11 @@ export class CreatemenuComponent implements OnInit {
     dinner: new FormArray(
       this.numberOfMeals.map(num=>{
         return new FormGroup({
-            menu_item_name: new FormControl('',[Validators .required]),
+            item_name: new FormControl('',[Validators .required]),
             menu_item_price: new FormControl('',[Validators.required]),
             item_ingredients:new FormControl('',[Validators.required ]),
             item_intresting_facts:new FormControl('',[Validators.required ]),
-            image:new FormControl('',[Validators.required]),
+            menu_item_image:new FormControl('',[Validators.required]),
             //week:new FormControl(this.activeDay,[Validators.required ]),
           });
         })
@@ -146,8 +146,9 @@ export class CreatemenuComponent implements OnInit {
       const reader = new FileReader();      
       reader.onload = () => {
         this.imageURL = reader.result as string;
+        console.log(reader.result);
         (this.myformGroup.controls[meal] as FormArray).controls[index].patchValue({
-          image: reader.result as string
+          menu_item_image: reader.result as string
         });
       }
       reader.readAsDataURL(file);

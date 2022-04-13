@@ -69,7 +69,7 @@ const routes: Routes = [
  {component:FindChefComponent,path:"FindChef/:zipCode/:cuisineId"},
  {component:SelectMenuComponent,path:"SelectMenu"},
  {component:OrderSummaryComponent,path:"OrderSummary"},
-//  {component:PersonalsignComponent,path:"personalsign"},
+ {component:PersonalsignComponent,path:"personalsign"},
  {component:PersonalemailcompleteComponent, path: "personalemailcomplete"},
 //  {component:PersonalloginComponent, path: "peronallogin"}
  

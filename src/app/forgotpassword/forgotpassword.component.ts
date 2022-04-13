@@ -26,7 +26,7 @@ export class ForgotpasswordComponent implements OnInit {
       return false;
     }
     this._ForgotPasswordDataService.queryTheServer({
-      email:this.forgotPasswordForm.value.email,
+      emailId:this.forgotPasswordForm.value.email,
     }).subscribe({
       next: resp=> this.router.navigate(['/chefemailcomplete']),
       error: err=>{

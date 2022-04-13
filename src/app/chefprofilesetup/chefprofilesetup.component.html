@@ -60,15 +60,15 @@
 
         <input formControlName="emailid" type="text" style="margin-top: 10px;" placeholder="Email" required>
 
-        <input formControlName="chef_phone" type="text" style="margin-top: 2px;" placeholder="Street Address" required>
+        <input formControlName="chef_street" type="text" style="margin-top: 2px;" placeholder="Street Address" required>
 
-        <input formControlName="chef_street" type="text" style="margin-top: 2px;" placeholder="City" required>
+        <input formControlName="chef_city" type="text" style="margin-top: 2px;" placeholder="City" required>
 
         <input formControlName="chef_state"  type="text" style="margin-top: 2px; " placeholder="State" required>
 
-        <input formControlName="chef_description" type="text" style="margin-top: 2px; " placeholder="Zip Code" required>
+        <input formControlName="chef_zip" type="text" style="margin-top: 2px; " placeholder="Zip Code" required>
 
-        <input formControlName="chef_zip" type="text" style="margin-top: 2px; " placeholder="Specialized Cuisines" required>
+        <input formControlName="chef_experience" type="text" style="margin-top: 2px; " placeholder="Experience" required>
         
         <br>
 
@@ -81,10 +81,10 @@
       <br>
       <h3>Specify how you would like customers to pay</h3>
       <h4>500 charceters maximum </h4>
-      <input type="text" style="margin-top: 2px; width: 80%; size: 500"  required> <br>
+      <input formControlName="chef_paymode" type="text" style="margin-top: 2px; width: 80%; size: 500" required> <br>
 
       <h3>Introduce yourself so people can get to know you!</h3>
-      <input type="text" style="margin-top: 2px; width: 80%; "  required> <br>
+      <input formControlName="chef_description" type="text" style="margin-top: 2px; width: 80%; "  required> <br>
       </form>
 
       <button type="submit" (click)="createProfile()" style="margin-left: 170px;"><a> Continue to create your menu </a></button> <br><br>

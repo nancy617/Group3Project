@@ -70,9 +70,9 @@ export class ChefprofilesetupComponent implements OnInit {
     form_data.append("chef_state", this.profileForm.value.chef_state);
     form_data.append("chef_street", this.profileForm.value.chef_street);
 
-    form_data.append("chef_paymode", this.profileForm.value.chef_street);
-    form_data.append("chef_description", this.profileForm.value.chef_street);
-    form_data.append("chef_experience", "10");
+    form_data.append("chef_paymode", this.profileForm.value.chef_paymode);
+    form_data.append("chef_description", this.profileForm.value.chef_description);
+    form_data.append("chef_experience", this.profileForm.value.chef_experience);
     form_data.append("chef_fblink"," ")
     form_data.append("chef_linkdin"," ")
     
