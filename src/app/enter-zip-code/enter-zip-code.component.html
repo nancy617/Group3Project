@@ -1,19 +1,7 @@
-<!--Progress "Wizard"-->
-<div class="progressCircle">
-    <a class="current">Enter Zip Code</a>
-    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
-    <a class="notCurrent">Pick a Cuisine</a>
-    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
-    <a class="notCurrent">Pick a Chef</a>
-    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
-    <a class="notCurrent">Pick a Meal</a>
-    <img src="assets/Images/arrow.png" width="75px" height="50px" style="line-height: 300px">
-    <a class="notCurrent">Finalize Order</a>
-
-</div>
+<img src="assets/Images/step1.png" alt="foodhome" width="1000px" style="margin-left: 200px;" >
 
 <!--Router continue button, still needs to pass zip code-->
-<div class="body">
+<div class="body" style="margin-bottom: -305px;">
   <form [formGroup]="zipForm" class="form" id="zipcode">
     <a class="txt">Please enter your zip code before proceeding </a>
     <input formControlName="zipCode"  type="number" placeholder="Enter 5-digit Zip Code *" id="zipValue" name="zipValue" required pattern="[0-9]{5}">

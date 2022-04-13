@@ -1,23 +1,24 @@
 /*Starts circles near center*/
-.progressCircle{
-    margin-left: 10%;
-    }
 
-    /*Formats Current Circle*/
-   .progressCircle a.current{
+.progressCircle {
+    margin-left: 10%;
+  }
+  
+  /*Formats Current Circle*/
+  .progressCircle a.current {
     margin: 25px;
     line-height: 250px;
     border-radius: 50%;
     font-size: 15px;
     color: #000;
     text-align: center;
-    background: #F6c515;
+    background: #f6c515;
     padding: 75px 50px;
-    border-style:outset;
-   } 
-
-   /*Formats non-Current Circles*/
-   .progressCircle a.notCurrent{
+    border-style: outset;
+  }
+  
+  /*Formats non-Current Circles*/
+  .progressCircle a.notCurrent {
     margin: 25px;
     line-height: 250px;
     border-radius: 50%;
@@ -26,62 +27,58 @@
     text-align: center;
     background: #dbdada;
     padding: 75px 50px;
-    border-style:outset;
-   } 
-
-
-   /* Rest of styling*/
-   h1{
+    border-style: outset;
+  }
+  
+  /* Rest of styling*/
+  h1 {
     text-align: center;
     font-size: 50px;
-}
-
-table tr td:empty{
+  }
+  
+  table tr td:empty {
     width: 150px;
-}
-
-.leftArrow{
+  }
+  
+  .leftArrow {
     transform: scaleX(-1);
     height: 100px;
     width: 100px;
     margin-left: 40px;
-}
-
-.rightArrow{
+  }
+  
+  .rightArrow {
     height: 100px;
     width: 100px;
     margin-left: 300px;
     margin-right: 40px;
-}
-
-.chefImage{
+  }
+  
+  .chefImage {
     margin-left: 350px;
-    border-radius:50%;
-}
-
-.chefInfo{
+    border-radius: 50%;
+  }
+  
+  .chefInfo {
     font-size: 30px;
-    
-}
-
-a.chefQuote{
+  }
+  
+  a.chefQuote {
     margin-left: 25%;
     font-size: 30px;
-    
-}
-
- /*Styling router buttons*/
- a.routing{
-    width:250px;
-    text-align:center;
+  }
+  
+  /*Styling router buttons*/
+  a.routing {
+    width: 250px;
+    text-align: center;
     padding: 20px 75px;
     display: inline-block;
     margin-top: 120px;
     margin-left: 22.5%;
     color: black;
-    background: #F6c515;
+    background: #f6c515;
     font-size: 30px;
     border: none;
     cursor: pointer;
   }
-
