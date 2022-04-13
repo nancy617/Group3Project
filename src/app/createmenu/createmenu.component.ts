@@ -22,25 +22,25 @@ export class CreatemenuComponent implements OnInit {
 },
 {
   "id": 2,
-  "cuisine_name": "Thai Food",
+  "cuisine_name": "Thai",
   "cuisine_image": "",
   "menus": []
 },
 {
   "id": 3,
-  "cuisine_name": "Indian Food",
+  "cuisine_name": "Indian",
   "cuisine_image": "",
   "menus": []
 },
 {
   "id": 4,
-  "cuisine_name": "Mexican Food",
+  "cuisine_name": "Mexican",
   "cuisine_image": "",
   "menus": []
 },
 {
   "id": 5,
-  "cuisine_name": "Middle Eastern Food",
+  "cuisine_name": "Middle Eastern",
   "cuisine_image": "",
   "menus": []
 }]
