@@ -45,6 +45,7 @@ import { AuthGuard } from './auth/auth.gaurd';
 import { ChefAuthGuard } from './auth/chefAuth.gaurd';
 import { LoaderInterceptor } from './loader.interceptor';
 import { LoaderComponent } from './loader/loader.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { LoaderComponent } from './loader/loader.component';
     CustomerwitechefreviewComponent,
     CustomerreviewsuccessComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    OrderHistoryComponent
 
   ],
   imports: [
