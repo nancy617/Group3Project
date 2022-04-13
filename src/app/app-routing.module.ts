@@ -50,7 +50,7 @@ const routes: Routes = [
  {component:TermsComponent, path:"Terms"},
  {component:PersonalacctComponent, path:"personalacct"},
 //  {component:BusinessacctComponent, path:"businessacct"},
-//  {component:Chefsignup1Component, path: "chefsignup1"},
+ {component:Chefsignup1Component, path: "chefsignup1"},
  {component:ChefemailcompleteComponent, path: "chefemailcomplete"},
  {component:ChefloginsetupComponent, path:"chefloginsetup"},
  {component:ChefprofilesetupComponent, path:"chefprofilesetup", canActivate:[AuthGuard,ChefAuthGuard] },
