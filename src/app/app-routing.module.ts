@@ -36,6 +36,7 @@ import { PersonalloginComponent } from './personallogin/personallogin.component'
 import { AuthGuard } from './auth/auth.gaurd';
 import { ChefAuthGuard } from './auth/chefAuth.gaurd';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
 
 
 const routes: Routes = [
@@ -73,7 +74,8 @@ const routes: Routes = [
  {component:PersonalsignComponent,path:"personalsign"},
  {component:PersonalemailcompleteComponent, path: "personalemailcomplete"},
 //  {component:PersonalloginComponent, path: "peronallogin"},
-{component:OrderHistoryComponent, path: "OrderHistory"}
+{component:OrderHistoryComponent, path: "OrderHistory"},
+{component:ChefReviewsComponent, path:"Reviews"}
  
 
 

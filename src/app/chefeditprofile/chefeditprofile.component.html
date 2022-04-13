@@ -8,10 +8,10 @@
     <!-- <script type="text/javascript" src="chefeditprofile.js"></script> -->
   </head>
   <body>
-    <h1 style="text-align:center" > Account Details </h1> 
+    <br />
+    <h1 style="text-align: center">Update Your Personal Profile</h1>
+    <br />
     <form class="form" id="login" style="margin-top: 10px">
-      <h1 style="text-align: center">Enrique Olvera</h1>
-
       <br />
       <div class="box1">
         <ul>
@@ -25,7 +25,7 @@
               required
               name="firstname"
               [(ngModel)]="firstName"
-            ><br><br>
+            /><br /><br />
             <label for="Name"><b>Last Name:</b></label
             >&nbsp;
             <input
@@ -35,32 +35,26 @@
               required
               name="lastname"
               [(ngModel)]="lastName"
-            /><br><br>
-
+            /><br /><br />
+            <input type="file" (change)="onFileChange($event)" />
             <img
-              src=""
-              alt="profile picture"
-              style="height: 70px; width: 240px"
+              *ngFor="let url of images"
+              [src]="url"
+              height="150"
+              width="200px"
+              style="margin: 3px"
             />
-            <button
-              style="
-                color: darkblue;
-                background-color: lightgray;
-                height: 25px;
-                font-size: 12px;
-              "
-            >
-              Update profile picture
-            </button><br><br>
-            <label for="Name"><b>My Payment Method(s):</b></label
-              >
-          
+            <br />
+            <br /><br />
+            <label for="Name"><b>My Payment Method(s):</b></label>
             <select
               name="PaymentMethod(s)"
               id="PaymentMethod(s)"
               [(ngModel)]="selected"
             >
-              <option value="Cash only upon pickup">Cash only upon pickup</option>
+              <option value="Cash only upon pickup">
+                Cash only upon pickup
+              </option>
               <option value="Credit card (currently unavailable)">
                 Credit Card (currently unavailable)
               </option>
@@ -78,7 +72,7 @@
               name="address"
               [(ngModel)]="address"
             /><br /><br />
-            <label for="year"><b>Cooking experience (years): </b></label>
+            <label for="year"><b>Cooking experience (years): </b></label>&nbsp;
             <input
               type="text"
               id="year"
@@ -89,10 +83,10 @@
               name="cookExp"
               [(ngModel)]="cookExp"
             /><br /><br />
-            <label for="date"><b>Member Since: </b></label>
+            <label for="date"><b>Member Since: </b></label>&nbsp;
             <input type="date" id="date" name="date" /><br /><br />
 
-            <label for="Phone#"><b>Phone Number: </b></label>
+            <label for="Phone#"><b>Phone Number: </b></label>&nbsp;
             <input
               type="tel"
               id="phone"
@@ -115,15 +109,32 @@
           </li>
         </ul>
       </div>
-
-    <button (click)="onSubmit()" type="submit" value="Save profile" style="color:black; float: right; width: auto; height: auto; font-size: 25px; border-radius:12%;">Save Profile</button>
-    
-</form>
+      <br />
+      <button
+        (click)="onSubmit()"
+        type="submit"
+        value="Save profile"
+        style="
+          color: black;
+          float: right;
+          width: auto;
+          height: auto;
+          font-size: 25px;
+          border-radius: 12%;
+          margin-top: 50px;
+          margin-right: 350px;
+        "
+      >
+        Save Profile
+      </button>
+    </form>
     <script>
       function myFunction() {
         document.getElementById("Email").placeholder = "Your email address";
       }
-      </script>
+    </script>
   </body>
-</html>
 
+
+
+</html>
