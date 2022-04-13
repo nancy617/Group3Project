@@ -1,13 +1,8 @@
-
 .idea/modules.xml
-*.pack
 *.lock
 *.xml
 *.json
-*.pack
 *.old
-*.pack
-*.pack
-*.pack
-*.pack
 *.iml
+*.pack
+*.json
