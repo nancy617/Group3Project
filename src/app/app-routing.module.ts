@@ -35,7 +35,7 @@ import { PersonalemailcompleteComponent } from './personalemailcomplete/personal
 import { PersonalloginComponent } from './personallogin/personallogin.component';
 import { AuthGuard } from './auth/auth.gaurd';
 import { ChefAuthGuard } from './auth/chefAuth.gaurd';
-
+import { ReserpwdemailcompleteComponent } from './reserpwdemailcomplete/reserpwdemailcomplete.component';
 
 const routes: Routes = [
 
@@ -71,6 +71,7 @@ const routes: Routes = [
  {component:OrderSummaryComponent,path:"OrderSummary"},
  {component:PersonalsignComponent,path:"personalsign"},
  {component:PersonalemailcompleteComponent, path: "personalemailcomplete"},
+ {component:ReserpwdemailcompleteComponent, path: "resetpwdemailcomplete"},
 //  {component:PersonalloginComponent, path: "peronallogin"}
  
 
