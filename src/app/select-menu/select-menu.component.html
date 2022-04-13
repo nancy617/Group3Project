@@ -25,6 +25,8 @@ style="margin-left: 200px; border-radius: 0%"
             <td *ngFor="let meal of Breakfast">
                 <h3> {{meal.item_name}}</h3>
                 <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+
+                
                 <br>
                 <h3> {{meal.menu_item_price}}</h3>
                 <input (click)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
@@ -570,64 +572,10 @@ style="margin-left: 200px; border-radius: 0%"
 <!--  -->
     <!-- </div> -->
 <!--  -->
-<div class="panel-footer" style="margin-top: 600px">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Help Center</th>
-          <th>Services</th>
-          <th>Career</th>
-          <th>Social Media</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="FAQs">FAQS</a></td>
-          <td><a href="FindChef"> Find a Chef</a></td>
-          <td><a href="chefsignup1"> Register as a chef
-             </a></td>
-          <td>
-            <i
-              class="fa fa-facebook-square"
-              style="color: #4267b2; margin-right: 5px"
-              aria-hidden="true"
-            ></i>
-            <i
-              class="fa fa-pinterest"
-              style="color: red; margin-right: 5px"
-            ></i>
-            <i
-              class="fa fa-twitter"
-              style="color: #1da1f2; margin-right: 5px"
-            ></i>
-            <i
-              class="fa fa-youtube-square"
-              style="color: red; margin-right: 5px"
-            ></i>
-            <i
-              class="fa fa-instagram"
-              style="color: #8a3ab9"
-              aria-hidden="true"
-            ></i>
-          </td>
-        </tr>
-        <tr>
-          <td><a href="Contact"> Contact Us</a></td>
-          
-        </tr>
-        <tr>
-          <td><a href="Terms">Terms of Services</a></td>
-        </tr>
-        <tr>
-          <td><a href="Privacypolicy">Privacy Policy</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="copy">
-   <p> Copyright 2022 All Copy Rights Reserved | Designed and Developed by Ethni-Connect Group</p>
-  
-  </div>
+
+
+
+
   
 
 
