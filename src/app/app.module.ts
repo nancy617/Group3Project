@@ -51,6 +51,7 @@ import { ReserpwdemailcompleteComponent } from './reserpwdemailcomplete/reserpwd
 
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
+import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
 
 
 
@@ -97,7 +98,8 @@ import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
     ReserpwdemailcompleteComponent,
 
     OrderHistoryComponent,
-    ChefReviewsComponent
+    ChefReviewsComponent,
+    CustomereditprofileComponent
 
 
   ],
