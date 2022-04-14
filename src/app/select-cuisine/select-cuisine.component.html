@@ -13,11 +13,13 @@ style="margin-left: 200px; border-radius: 0%"
   <table>
     <tr>
       <td *ngFor="let cuisine of cuisines" >
+       
         <label class="label" [for]="cuisine.cuisine_name"> {{cuisine.cuisine_name}}</label>
         <img class="image1" [name]="cuisine.cuisine_name" src="assets/Images/temporaryFoodImage.png" width="200px" height="200px">
       </td>
     </tr>
   </table>
+  
 </div>
 <div>
     <input class="checkbox" type="checkbox" id="mexican" name="mexican" value="mexican">
@@ -57,11 +59,15 @@ style="margin-left: 200px; border-radius: 0%"
 
 
    <div>
-        <nav>
-            <a class="routing" href="EnterZipCode">Back</a>
+        <!--<nav>
+       <a class="routing" href="EnterZipCode">Back</a>
             <a class="routing" href="FindChef">Continue</a>
+        </nav> !-->
+        <nav>
+          <a class="routing" href="FindChef/:zipCode/:cuisineId" >Continue</a>
         </nav>
    </div>  
+  
 
   
   

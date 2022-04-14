@@ -56,7 +56,9 @@
         </div>
 
         <div  class="form__input-group">
-          <input formControlName="password"  type="password" class="form__input" autofocus placeholder="Password ∗" required>
+          <input formControlName="password"  type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="form__input" autofocus placeholder="Password ∗" 
+           required>
           <div class="form__input-error-message"></div>
         </div>
 

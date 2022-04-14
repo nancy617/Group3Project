@@ -35,9 +35,12 @@ import { PersonalemailcompleteComponent } from './personalemailcomplete/personal
 import { PersonalloginComponent } from './personallogin/personallogin.component';
 import { AuthGuard } from './auth/auth.gaurd';
 import { ChefAuthGuard } from './auth/chefAuth.gaurd';
-import { OrderHistoryComponent } from './order-history/order-history.component';
+
+import { ReserpwdemailcompleteComponent } from './reserpwdemailcomplete/reserpwdemailcomplete.component';
 import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
 import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+
 
 
 const routes: Routes = [
@@ -74,10 +77,16 @@ const routes: Routes = [
  {component:OrderSummaryComponent,path:"OrderSummary"},
  {component:PersonalsignComponent,path:"personalsign"},
  {component:PersonalemailcompleteComponent, path: "personalemailcomplete"},
+
+ {component:ReserpwdemailcompleteComponent, path: "resetpwdemailcomplete"},
+//  {component:PersonalloginComponent, path: "peronallogin"}
+
 //  {component:PersonalloginComponent, path: "peronallogin"},
 {component:OrderHistoryComponent, path: "OrderHistory"},
 {component:ChefReviewsComponent, path:"Reviews"},
 {component:CustomereditprofileComponent, path:"CustomerEditProfile"}
+{component:ChefReviewsComponent, path:"Reviews"}
+
  
 
 
