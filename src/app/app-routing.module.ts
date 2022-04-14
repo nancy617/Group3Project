@@ -40,6 +40,9 @@ import { ReserpwdemailcompleteComponent } from './reserpwdemailcomplete/reserpwd
 import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
 import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { CustomerwitechefreviewComponent } from './customerwitechefreview/customerwitechefreview.component';
+import { CustomerviewchefpageComponent } from './customerviewchefpage/customerviewchefpage.component';
+import { CustomerreviewsuccessComponent } from './customerreviewsuccess/customerreviewsuccess.component';
 
 
 
@@ -82,9 +85,12 @@ const routes: Routes = [
 
 {component:OrderHistoryComponent, path: "OrderHistory"},
 {component:ChefReviewsComponent, path:"Reviews"},
-{component:CustomereditprofileComponent, path:"CustomerEditProfile"}
+{component:CustomereditprofileComponent, path:"CustomerEditProfile"},
+{component:CustomerwitechefreviewComponent, path: "Reviews"},
+{component:CustomerwitechefreviewComponent, path:"WriteReview"},
+{component:CustomerviewchefpageComponent, path: "ViewChef"},
+{component:CustomerreviewsuccessComponent, path: "ReviewSuccess"}
 
- 
 
 
 ];
