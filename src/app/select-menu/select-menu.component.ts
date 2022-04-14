@@ -91,6 +91,12 @@ export class SelectMenuComponent implements OnInit {
             this.Breakfast=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Breakfast')
             this.Lunch=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Lunch')
             this.Dinner=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Dinner')
+          console.log(this.chefMenuList);
+          console.log(this.Breakfast);
+          console.log(this.Lunch);
+          console.log(this.Dinner);
+          localStorage.setItem('data1',data.chefMenuList)
+          console.log(localStorage.getItem("data1"))
         },
         error:err=>console.log(err)
       })
@@ -104,6 +110,7 @@ export class SelectMenuComponent implements OnInit {
     this.Breakfast=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Breakfast')
     this.Lunch=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Lunch')
     this.Dinner=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Dinner')
+
   }
   
   onMenuAddition(event:any,menuID:number){

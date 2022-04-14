@@ -29,6 +29,7 @@ export class ForgotpasswordComponent implements OnInit {
       emailId:this.forgotPasswordForm.value.email,
     }).subscribe({
       next: resp=> this.router.navigate(['/resetpwdemailcomplete']),
+
       error: err=>{
         console.log(err)
         alert(err.error.message)

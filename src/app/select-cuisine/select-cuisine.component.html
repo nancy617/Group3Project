@@ -1,28 +1,29 @@
 
 <img
-src="assets/Images/step2.png"
-alt="foodhome"
-width="1000px"
-style="margin-left: 200px; border-radius: 0%"
+        src="assets/Images/step2.png"
+        alt="foodhome"
+        width="1000px"
+        style="margin-left: 200px; border-radius: 0%"
 >
 
 <!--Rest of the CuisineSelect page-->
 <h1>Types of Cuisine</h1>
 <h3>Select One Type of Cuisine</h3>
 <div>
-  <table>
-    <tr>
-      <td *ngFor="let cuisine of cuisines" >
-        <input type="radio" id="css" name="fav_language" value="CSS">
-        <label class="label" [for]="cuisine.cuisine_name"> {{cuisine.cuisine_name}}</label>
-        <img class="image1" [name]="cuisine.cuisine_name" src="assets/Images/temporaryFoodImage.png" width="200px" height="200px">
-      </td>
-    </tr>
-  </table>
-  
-  
+    <table>
+        <tr>
+            <td *ngFor="let cuisine of cuisines" >
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label class="label" [for]="cuisine.cuisine_name"> {{cuisine.cuisine_name}}</label>
+                <!-- <img class="image1" [name]="cuisine.cuisine_name" src="assets/Images/temporaryFoodImage.png" width="200px" height="200px">-->
+                <img class="image1" [name]="cuisine.cuisine_image" src="data:image/jpeg;base64,{{cuisine.cuisine_image}}" width="200px" height="200px">
+            </td>
+        </tr>
+    </table>
+
+
 </div>
-<div>
+<!--div>
     <input class="checkbox" type="checkbox" id="mexican" name="mexican" value="mexican">
     <label class="label" for="mexican"> Mexican</label>
     <input class="checkbox2" type="checkbox" id="italian" name="italian" value="italian">
@@ -57,22 +58,22 @@ style="margin-left: 200px; border-radius: 0%"
     <img class="image1" src="assets/Images/temporaryFoodImage.png" width="200px" height="200px">
     <img class="image2" src="assets/Images/temporaryFoodImage.png" width="200px" height="200px">
 </div>
+-->
+
+<div>
+    <!--<nav>
+   <a class="routing" href="EnterZipCode">Back</a>
+        <a class="routing" href="FindChef">Continue</a>
+    </nav> !-->
+    <nav>
+        <a class="routing" href="FindChef/:zipCode/:cuisineId" >Continue</a>
+    </nav>
+</div>
 
 
-   <div>
-        <!--<nav>
-       <a class="routing" href="EnterZipCode">Back</a>
-            <a class="routing" href="FindChef">Continue</a>
-        </nav> !-->
-        <nav>
-          <a class="routing" href="FindChef/:zipCode/:cuisineId" >Continue</a>
-        </nav>
-   </div>  
-  
 
-  
-  
-  
-  
-  
-  
+
+
+
+
+

@@ -22,5 +22,6 @@ export class ResetPwdAuthGaurd implements CanActivate {
 
     forgotPwd() {
         return localStorage.getItem('emailId');
+
      }
 }
