@@ -145,8 +145,8 @@
 
 /*Testing Modals*/
 .modal {
-   /* display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+   display: none; 
+    position: fixed; 
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;

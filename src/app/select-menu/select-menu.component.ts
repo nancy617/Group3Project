@@ -8,6 +8,22 @@ import { FetchMenuByChefIdDataService } from 'src/network/dataServices/FetchMenu
   styleUrls: ['./select-menu.component.css']
 })
 export class SelectMenuComponent implements OnInit {
+  openModal()
+  {
+    var modal = document.getElementById("myModal") as HTMLElement;
+
+    //need to get values from database
+    
+    modal.style.display = "block";
+  }
+
+  closeModal()
+  {
+    var modal = document.getElementById("myModal") as HTMLElement;
+
+    modal.style.display = "none";
+  }
+  
 
   daysInAWeek=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
   activeDay="Wednesday"
