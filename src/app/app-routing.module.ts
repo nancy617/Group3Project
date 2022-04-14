@@ -77,11 +77,9 @@ const routes: Routes = [
  {component:OrderSummaryComponent,path:"OrderSummary"},
  {component:PersonalsignComponent,path:"personalsign"},
  {component:PersonalemailcompleteComponent, path: "personalemailcomplete"},
-
  {component:ReserpwdemailcompleteComponent, path: "resetpwdemailcomplete"},
 //  {component:PersonalloginComponent, path: "peronallogin"}
 
-//  {component:PersonalloginComponent, path: "peronallogin"},
 {component:OrderHistoryComponent, path: "OrderHistory"},
 {component:ChefReviewsComponent, path:"Reviews"},
 {component:CustomereditprofileComponent, path:"CustomerEditProfile"}
