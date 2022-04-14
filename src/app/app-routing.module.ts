@@ -86,7 +86,6 @@ const routes: Routes = [
 {component:OrderHistoryComponent, path: "OrderHistory"},
 {component:ChefReviewsComponent, path:"Reviews"},
 {component:CustomereditprofileComponent, path:"CustomerEditProfile"},
-{component:CustomerwitechefreviewComponent, path: "Reviews"},
 {component:CustomerwitechefreviewComponent, path:"WriteReview"},
 {component:CustomerviewchefpageComponent, path: "ViewChef"},
 {component:CustomerreviewsuccessComponent, path: "ReviewSuccess"}
