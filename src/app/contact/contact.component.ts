@@ -13,7 +13,7 @@ export class ContactComponent implements OnInit {
   name: string = '';
   emailid: string = '';
   message: string = '';
-  contactUrl: string = 'http://localhost:8080/ContactRequest';
+  contactUrl: string = 'http://backendaws-env.eba-fdddft5p.us-east-2.elasticbeanstalk.com/ContactRequest';
   constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
