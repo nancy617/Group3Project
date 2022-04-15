@@ -3,7 +3,7 @@
 
 
 <!--Need to get chef's name from database-->
-<h1>Chef Name's Weekly Meal Plan</h1>
+<h1> {{ chef ? (chef.chef_fname + " " + chef.chef_lname | titlecase) : 'Chef'}}'s Weekly Meal Plan</h1>
 <h2>Please Select at least one meal to checkout</h2>
 
 <div class="daySelector">
@@ -11,456 +11,50 @@
         [style.background-color]="column==activeDay? 'rgb(260, 200, 40)': ''">{{column}}</button>
 </div>
 
+<ng-template #noMenu>
+    <div class="nomenu">
+        Menu for the day yet to be added!!!
+    </div>
+</ng-template>
 <h3>Ethni-Cuisine Menu</h3>
-
-<div>
-    <table class="mealTable">
-        <tr>
-            <td class="mealTime">Breakfast</td>
-            <td *ngFor="let meal of Breakfast">
-                <h3> {{meal.item_name}}</h3>
-                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
-
-
-                <br>
-                <h3> {{meal.menu_item_price}}</h3>
-                <input (click)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
-            </td>
-        </tr>
-
-        <tr>
-            <td class="mealTime">Lunch</td>
-            <td *ngFor="let meal of Lunch">
-                <h3> {{meal.item_name}}</h3>
-                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
-                <br>
-                <h3> {{meal.menu_item_price}}</h3>
-                <input (click)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
-            </td>
-
-        </tr>
-
-        <tr>
-            <td class="mealTime">Dinner</td>
-            <td *ngFor="let meal of Dinner">
-                <h3> {{meal.item_name}}</h3>
-                <img class="foodImage"
-                    [src]="meal.menu_item_image?meal.menu_item_image:'assets/Images/temporaryFoodImage.png'">
-                <br>
-                <h3> {{meal.menu_item_price}}</h3>
-                <input (change)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
-            </td>
-
-        </tr>
-    </table>
-</div>
-
-<!--Row 1-->
-<!--Food Images from Database-->
-<div>
-    <table class="mealTable">
-        <tr>
-            <td class="mealTime">Breakfast</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type ="image" class="foodImage" id= "picRia" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR1b" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR1c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-        </tr>
-
-
-    </table>
-</div>
-
-
-<div>
-    <table class="textTable">
-        <!--Food Names from Database-->
-        <tr>
-            <td class="foodName">Food 1</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td class="foodName">Food 2</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td class="foodName">Food 3</td>
-        </tr>
-
-
-    </table>
-
-</div>
-
-<div>
-    <table class="amountTable">
-        <!--Needs Javascript Implementation-->
-        <tr>
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR1a" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-
-            <td>
-                <!-- <button class="decrease">-</button> -->
-            </td>
-
-            <td>
-                <input id="amountInputR1b" type="number" min="0" placeholder="Enter Value">
-            </td>
-
-            <td>
-                <!-- <button class="increase">+</button> -->
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR1c" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-
-        </tr>
-
-    </table>
-
-</div>
-
-<!--Row 2-->
-<!--Food Images from Database-->
-<div>
-    <table class="mealTable">
-        <tr>
-            <td class="mealTime">Lunch</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR2a" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR2b" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR2c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-        </tr>
-
-
-    </table>
-</div>
-
-
-<div>
-    <table class="textTable">
-        <!--Food Names from Database-->
-        <tr>
-            <td class="foodName">Food 1</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td class="foodName">Food 2</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td class="foodName">Food 3</td>
-        </tr>
-
-
-    </table>
-
-</div>
-
-<div>
-    <table class="amountTable">
-        <!--Needs Javascript Implementation-->
-        <tr>
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR2a" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR2b" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR2c" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-
-        </tr>
-
-    </table>
-
-</div>
-
-<!--Row 3-->
-<!--Food Images from Database-->
-<div>
-    <table class="mealTable">
-        <tr>
-            <td class="mealTime">Dinner</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR3a" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR3c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-        </tr>
-
-
-    </table>
-</div>
-
-
-<div>
-    <table class="textTable">
-        <!--Food Names from Database-->
-        <tr>
-            <td class="foodName">Food 1</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td class="foodName">Food 2</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td class="foodName">Food 3</td>
-        </tr>
-
-
-    </table>
-
-</div>
-
-<div>
-    <table class="amountTable">
-        <!--Needs Javascript Implementation-->
-        <tr>
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR3a" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR3b" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR3c" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-
-        </tr>
-
-    </table>
-
+<div class="menu-container" *ngIf="!isMenuEmpty; else noMenu">
+    <div class="meal breakfast" *ngIf="Breakfast.length">
+        <div class="weekday">Breakfast</div>
+        <div class="menu" *ngFor="let menu of Breakfast">
+            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
+            <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
+            <div class="menu-action">
+                <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="meal Lunch" *ngIf="Lunch.length">
+        <div class="weekday">Lunch</div>
+        <div class="menu" *ngFor="let menu of Lunch">
+            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
+            <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
+            <div class="menu-action">
+                <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="meal Dinner" *ngIf="Dinner.length">
+        <div class="weekday">Dinner</div>
+        <div class="menu" *ngFor="let menu of Dinner">
+            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
+            <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
+            <div class="menu-action">
+                <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
+            </div>
+        </div>
+        
+    </div>
 </div>
 
 <div>
     <nav>
         <a class="routing" href="FindChef">Back</a>
-        <a class="routing" href="OrderSummary">Continue</a>
+        <a class="routing" (click)="goToOrderSummary()">Continue</a>
     </nav>
 </div>
 

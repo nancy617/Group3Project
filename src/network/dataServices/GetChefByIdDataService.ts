@@ -38,7 +38,7 @@ export class GetChefByIdDataService {
       }
     
       methodName(): string | undefined {
-        return `/chefById/${this.chef_id}`;
+        return `/chefByLoginId/${this.chef_id}`;
       }
 
       prepareRequestWithParameters(..._parameters: any[]) {

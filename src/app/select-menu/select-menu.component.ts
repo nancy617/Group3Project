@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from 'src/network/dataServices/cart.service';
 import { FetchMenuByChefIdDataService } from 'src/network/dataServices/FetchMenuByChefIdDataService';
+import { GetChefByIdDataService } from 'src/network/dataServices/GetChefByIdDataService';
 
 @Component({
   selector: 'app-select-menu',
@@ -28,7 +30,9 @@ export class SelectMenuComponent implements OnInit {
   daysInAWeek=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
   activeDay="Wednesday"
   chefId:number=0
+  isMenuEmpty = false
   selectedMenu:any=[]
+  chef: any;
   chefMenuList=[
     {
       "menuid":1,
@@ -91,14 +95,18 @@ export class SelectMenuComponent implements OnInit {
   Lunch:any=[]
   Dinner:any=[]
 
+  orders: Array<any> = [];
+
   constructor(private _FetchMenuByChefIdDataService:FetchMenuByChefIdDataService,
-    private _Activatedroute:ActivatedRoute) { }
+    private _Activatedroute:ActivatedRoute, public cartService: CartService, 
+    public router: Router, public chefService: GetChefByIdDataService) { }
 
   ngOnInit(): void {
 
     this._Activatedroute.paramMap.subscribe(params => { 
       this.chefId = Number(params.get('chefId')) ;
-
+      this.chefService.prepareRequestWithParameters([this.chefId])
+      this.chefService.queryTheServer().subscribe(data => this.chef = data)
       this._FetchMenuByChefIdDataService.prepareRequestWithParameters(this.chefId)
       this._FetchMenuByChefIdDataService.queryTheServer().subscribe({
         next:res=>{
@@ -122,11 +130,12 @@ export class SelectMenuComponent implements OnInit {
 
 
   updateActiveDay(column:string){
-    this.activeDay=column
-    this.Breakfast=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Breakfast')
-    this.Lunch=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Lunch')
-    this.Dinner=this.chefMenuList.filter(menu=>menu.week==this.activeDay && menu.menucategory=='Dinner')
-
+    this.activeDay= column
+    const weekMenuList = this.chefMenuList.filter(menu=>menu.week.toLowerCase()===this.activeDay.toLowerCase())
+    this.Breakfast=weekMenuList.filter(menu=> menu.menucategory.toLowerCase()=='Breakfast'.toLowerCase())
+    this.Lunch=weekMenuList.filter(menu=> menu.menucategory.toLowerCase()=='Lunch'.toLowerCase())
+    this.Dinner=weekMenuList.filter(menu=> menu.menucategory.toLowerCase()=='Dinner'.toLowerCase())
+    this.isMenuEmpty = weekMenuList.length===0 ? true : false
   }
   
   onMenuAddition(event:any,menuID:number){
@@ -141,6 +150,46 @@ export class SelectMenuComponent implements OnInit {
     }
     console.log(this.selectedMenu)
 
+  }
+  getQuantity(id: number) {
+    return this.orders.find( item => item.menuid === id)?.quantity ?? 0
+  }
+
+  reduceQuantity(menu: any) {
+    this.orders = this.orders.map(item => {
+      if( item.menuid === menu.menuid && item.quantity){
+        item.quantity -= 1
+        return item
+      }
+      return item
+    })
+  }
+
+  increaseQuantity(menu: any) {
+    const selectedItem = this.orders.find((item:any) => {
+      return menu.menuid === item.menuid;
+    }) ?? null
+    if (selectedItem === null) {
+      console.log('null');
+      this.orders.push({ menuid: menu.menuid, quantity: 1 })
+    } else {
+      this.orders = this.orders.map((item:any) => {
+        if (item.menuid === menu.menuid) {
+          item.quantity += 1
+        }
+        return item
+      })
+
+    }
+  }
+
+  goToOrderSummary() {
+    const orders = this.orders.map( item => {
+      const menu = this.chefMenuList.find( chefMenu => chefMenu.menuid === item.menuid)
+      return { menu, quantity: item.quantity}
+    })
+    this.cartService.setCart(orders)
+    this.router.navigate(['/OrderSummary'])
   }
 
 

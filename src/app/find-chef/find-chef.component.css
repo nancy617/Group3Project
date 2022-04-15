@@ -82,3 +82,56 @@
     border: none;
     cursor: pointer;
   }
+
+  .chef {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .chef-pic {
+    width: 180px;
+    height: 210px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .chef-pic img {
+    max-width: 100%;
+  }
+  .chef-details {
+    padding: 50px;
+  }
+
+  .chef-details .title {
+    font-weight: bolder;
+  }
+
+  .title span {
+    padding-left: 10px;
+    color: rgb(30 105 209);
+  }
+
+  .address {
+    font-size: small;
+    color: #000000ab;
+    margin: 15px 0 5px 0;
+  }
+  .exp {
+    font-size: small;
+  }
+
+  .pay {
+    margin-top: 5px;
+  }
+
+  a.routingChef {
+    text-align: center;
+    padding: 4px 15px;
+    display: inline-block;
+    margin-top: 10px;
+    color: black;
+    background: #f6c515;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
