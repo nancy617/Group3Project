@@ -25,15 +25,8 @@ export class LoginComponent implements OnInit {
       email:this.loginForm.value.email,
       password:this.loginForm.value.password
     }).subscribe({
-      
       next: resp=>{
         const data:any=resp
-        localStorage.setItem('loginId',data.loginId)
-        localStorage.setItem('isChef',data.chef)
-        if (this._SignInDataService.redirectUrl){
-          this.router.navigate([this._SignInDataService.redirectUrl])
-          return
-        }
         if(data.chef)
         {
           this.router.navigate(['/chefprofilesetup'])
@@ -41,6 +34,8 @@ export class LoginComponent implements OnInit {
         else{
           this.router.navigate(['/EnterZipCode'])
         }
+        localStorage.setItem('loginId',data.loginId)
+        localStorage.setItem('isChef',data.chef)
         
       } ,
       error: err=>{
