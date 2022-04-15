@@ -1,9 +1,0 @@
-.idea/modules.xml
-*.lock
-*.xml
-*.json
-*.old
-*.iml
-*.pack
-*.json
-node_modules
