@@ -6,56 +6,70 @@
 <h1>Chef Name's Weekly Meal Plan</h1>
 <h2>Please Select at least one meal to checkout</h2>
 
-<div class="daySelector">
-    <button *ngFor="let column of daysInAWeek" (click)="updateActiveDay(column)" class="day"
-        [style.background-color]="column==activeDay? 'rgb(260, 200, 40)': ''">{{column}}</button>
-</div>
 
-<h3>Ethni-Cuisine Menu</h3>
+    <div class="daySelector">
+        <button *ngFor="let column of daysInAWeek" (click)="updateActiveDay(column)" class="day"
+            [style.background-color]="column==activeDay? 'rgb(260, 200, 40)': ''">{{column}}</button>
+    </div>
+    
+    <h3>Ethni-Cuisine Menu</h3>
+    
+ 
+<div class="container">
+        <table class="mealTable">
+            <tr>
+                <td class="mealTime">Breakfast</td>
+                <td *ngFor="let meal of Breakfast">
+                    <h3> {{meal.item_name}}</h3>
+                    <input type ="image" class="foodImage" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
+    
+    
+                    <br>
+                    <h3> {{meal.menu_item_price}}</h3>
+                    <input (click)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
+                </td>
+            </tr>
+    
+            <tr>
+                <td class="mealTime">Lunch</td>
+                <td *ngFor="let meal of Lunch">
+                    <h3> {{meal.item_name}}</h3>
+                    <input type ="image" class="foodImage" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
+                    <br>
+                    <h3> {{meal.menu_item_price}}</h3>
+                    <input (click)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
+                </td>
+    
+            </tr>
+    
+            <tr>
+                <td class="mealTime">Dinner</td>
+                <td *ngFor="let meal of Dinner">
+                    <h3> {{meal.item_name}}</h3>
+                    <input type="image" class="foodImage" title="Click for Info"
+                        [src]="meal.menu_item_image?meal.menu_item_image:'assets/Images/temporaryFoodImage.png'" (click)="openModal()" >
+                    <br>
+                    <h3> {{meal.menu_item_price}}</h3>
+                    <input (change)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
+                </td>
+    
+            </tr>
+        </table>
+    </div>
+    
 
-<div>
-    <table class="mealTable">
-        <tr>
-            <td class="mealTime">Breakfast</td>
-            <td *ngFor="let meal of Breakfast">
-                <h3> {{meal.item_name}}</h3>
-                <input type ="image" class="foodImage" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
 
-                
+<div> 
+    <nav>
+        <a class="routing" href="FindChef">Back</a>
+        <a class="routing" href="OrderSummary">Continue</a>
+    </nav>
+     </div> -->
 
 
-                <br>
-                <h3> {{meal.menu_item_price}}</h3>
-                <input (click)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
-            </td>
-        </tr>
 
-        <tr>
-            <td class="mealTime">Lunch</td>
-            <td *ngFor="let meal of Lunch">
-                <h3> {{meal.item_name}}</h3>
-                <input type ="image" class="foodImage" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-                <br>
-                <h3> {{meal.menu_item_price}}</h3>
-                <input (click)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
-            </td>
 
-        </tr>
-
-        <tr>
-            <td class="mealTime">Dinner</td>
-            <td *ngFor="let meal of Dinner">
-                <h3> {{meal.item_name}}</h3>
-                <input type="image" class="foodImage" title="Click for Info"
-                    [src]="meal.menu_item_image?meal.menu_item_image:'assets/Images/temporaryFoodImage.png'" (click)="openModal()" >
-                <br>
-                <h3> {{meal.menu_item_price}}</h3>
-                <input (change)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
-            </td>
-
-        </tr>
-    </table>
-</div>
+<!-- COLIN'S PREVIOUS CODE -->
 
 <!--Row 1-->
 <!--Food Images from Database-->
@@ -459,12 +473,12 @@
 <!--  -->
 <!-- </div> -->
 <!--  -->
-<!-- <div> -->
-    <!-- <nav> -->
-        <!-- <a class="routing" href="FindChef">Back</a> -->
-        <!-- <a class="routing" href="OrderSummary">Continue</a> -->
-    <!-- </nav> -->
-<!-- </div> -->
+<!--
+    
+    
+    
+    
+<!--
 
 <!-- The Modal -->
 <!-- <div id="myModal" class="modal"> -->
