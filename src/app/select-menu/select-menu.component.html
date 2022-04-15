@@ -21,7 +21,7 @@
     <div class="meal breakfast" *ngIf="Breakfast.length">
         <div class="weekday">Breakfast</div>
         <div class="menu" *ngFor="let menu of Breakfast">
-            <input type ="image" class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}" (click)="openModal()">
+            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
             <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
             <div class="menu-action">
                 <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
@@ -31,7 +31,7 @@
     <div class="meal Lunch" *ngIf="Lunch.length">
         <div class="weekday">Lunch</div>
         <div class="menu" *ngFor="let menu of Lunch">
-            <input type="image" class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}" (click)="openModal()">
+            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
             <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
             <div class="menu-action">
                 <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
@@ -41,7 +41,7 @@
     <div class="meal Dinner" *ngIf="Dinner.length">
         <div class="weekday">Dinner</div>
         <div class="menu" *ngFor="let menu of Dinner">
-            <input type="image" class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}" (click)="openModal()">
+            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
             <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
             <div class="menu-action">
                 <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
@@ -83,7 +83,7 @@
                 <td></td>
 
                 <td>
-                    <input type ="image" class="chefImage" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
+                    <img class="chefImage" src="assets/Images/temporaryFoodImage.png">
                 </td>
 
             </tr>
@@ -95,7 +95,7 @@
         <p class="chefName">Cooked by Chef Name Here</p>
 
 
-        <input type="image" class="popupFoodImage" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
+        <img class="popupFoodImage" src="assets/Images/temporaryFoodImage.png">
 
         <p class="foodName">Food Name goes here Price: $###.##</p>
 
