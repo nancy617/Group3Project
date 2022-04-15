@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartService } from 'src/network/dataServices/cart.service';
+import { OrderService } from 'src/network/dataServices/order.service';
+import { SignInDataService } from 'src/network/dataServices/SigninDataService';
 
 @Component({
   selector: 'app-order-summary',
@@ -6,10 +10,64 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-summary.component.css']
 })
 export class OrderSummaryComponent implements OnInit {
-
-  constructor() { }
+  totalValue = 0;
+  cart = this.cartService.cart;
+  constructor(public cartService: CartService,
+    public orderService: OrderService,
+    public signService: SignInDataService,
+    public router: Router) { }
 
   ngOnInit(): void {
+    console.log('init');
+    
+    // this.cartService.menu.forEach(menu => this.cartService.addMenuToCart(menu))
+  }
+  increaseQuantity(menu: any) {
+    console.log({ menu })
+    this.cartService.addMenuToCart(menu)
+  }
+  reduceQuantity(menu: any) {
+    console.log({ menu })
+    this.cartService.removeMenuFromCart(menu)
+  }
+
+  getOrderValue(){
+    let amount = 0;
+    let orders = this.cartService.cart
+    orders.forEach(item => {
+      amount += item.menu.menu_item_price * item.quantity
+    })
+    const tax = (amount/100 * 6)
+    this.totalValue = amount + tax
+    return amount + tax;
+  }
+
+  getTaxValue() {
+    let amount = 0;
+    let orders = this.cartService.cart
+    orders.forEach(item => {
+      amount += item.menu.menu_item_price * item.quantity
+    })
+    return (amount/100 * 6);
+  }
+
+  placeOrder() {
+    const customerId = localStorage.getItem('loginId')
+    if(!customerId) {
+      this.signService.redirectUrl = this.router.url
+      console.log(this.signService.redirectUrl)
+      this.router.navigate(['/Login'])
+      return
+    }
+    const orders = this.cartService.cart
+    const orderData = {
+      customerLoginid: customerId,
+      totalprice: this.getOrderValue(),
+      orderItems: orders.map(item => {return {menu_id: item.menu.menuid, quantity:item.quantity}})
+    }
+    this.orderService.postOrder(orderData).subscribe(orderInfo => {
+      this.router.navigate(['/ThankYouForOrder'])
+    })
   }
 
 }
