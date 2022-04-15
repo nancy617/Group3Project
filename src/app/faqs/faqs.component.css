@@ -1,5 +1,5 @@
 .button1 {
-  border-radius: 20%;
+  border-radius: 10%;
   border: none;
   cursor: pointer;
   background-color: #f6c515 ;
@@ -8,9 +8,9 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 24px 242px;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
 }
 
 .limitTextHeight {
