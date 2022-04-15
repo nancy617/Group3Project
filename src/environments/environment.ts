@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseURL:"http://localhost:8080"
+  apiBaseURL:"http://backendaws-env.eba-fdddft5p.us-east-2.elasticbeanstalk.com"
 };
 
 /*
