@@ -1,42 +1,27 @@
- /* Rest of the Page Styling */
+form {border: 3px solid #f1f1f1;
 
- a.orderNum{
-    margin-left: 65%;
-    font-size: 56px;
-    margin-top: 30px;
-    color: black;
-    
-    
-}
+  height: 430px;}
 
-a.cancelTitle{
-    margin-left: 25%;
-    text-align:center;
-    font-size: 64px;
-    line-height: 300px;
-    color: black;
-
-}
-
-a.routing{
-    width:250px;
-    text-align:center;
-    padding: 20px 75px;
-    display: inline-block;
-    margin-top: 200px;
-    margin-left: 24%;
-    color: black;
-    background: #F6c515;
-    font-size: 30px;
+  .button1 {
+    background-color: #F6c515;
+    padding: 40px 10px;
+    margin: 40px 55px;
     border: none;
     cursor: pointer;
+    width: 32%;
+    height: 32%;
+    font-size: 19px;
+    
   }
+  
 
-  a.cancelMsg{
-    margin-left: 15%;
-    text-align: center;
-    font-size: 36px;
-    color: black;
-    position: absolute;
-    bottom: 20px;
+  button:hover {
+    opacity: 0.8;
   }
+  
+  
+  span.psw {
+    
+    margin-left: 140px;}
+  
+  span.click {  margin-left: 200px;}
