@@ -9,6 +9,7 @@ import { FetchCuisinesForZipCodeDataService } from 'src/network/dataServices/Fet
 })
 export class SelectCuisineComponent implements OnInit {
     zipCode:number=0
+    selectedCuisine: number = 1;
     cuisines:any=[]
     constructor( private _Activatedroute:ActivatedRoute,
                  private _FetchCuisinesForZipCodeDataService: FetchCuisinesForZipCodeDataService ) { }
@@ -24,6 +25,10 @@ export class SelectCuisineComponent implements OnInit {
             this.fetchCuisinesForZipCode()
         }
 
+    }
+
+    selectCuisine(id: number) {
+        this.selectedCuisine = id
     }
 
     fetchCuisinesForZipCode(){
