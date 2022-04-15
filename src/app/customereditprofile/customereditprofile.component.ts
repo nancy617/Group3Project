@@ -16,8 +16,9 @@ export class CustomereditprofileComponent implements OnInit {
   lastName: string = '';
   street: string = '';
   city: string = '';
-  zip: string = '';
+  
   state: string = '';
+  zip: string = '';
   phone: string = '';
   emailid: string = '';
   selectedFiles?: FileList;
@@ -39,8 +40,8 @@ export class CustomereditprofileComponent implements OnInit {
   public onSubmit() {
     let data = {
       emailid: this.emailid,
-      firstname: this.firstName,
-      lastname: this.lastName,
+      firstName: this.firstName,
+      lastName: this.lastName,
       street: this.street,
       city: this.city,
       state: this.state,

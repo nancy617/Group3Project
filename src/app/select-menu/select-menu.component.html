@@ -19,7 +19,9 @@
             <td class="mealTime">Breakfast</td>
             <td *ngFor="let meal of Breakfast">
                 <h3> {{meal.item_name}}</h3>
-                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+                <input type ="image" class="foodImage" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
+
+                
 
 
                 <br>
@@ -32,7 +34,7 @@
             <td class="mealTime">Lunch</td>
             <td *ngFor="let meal of Lunch">
                 <h3> {{meal.item_name}}</h3>
-                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
+                <input type ="image" class="foodImage" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
                 <br>
                 <h3> {{meal.menu_item_price}}</h3>
                 <input (click)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
@@ -44,8 +46,8 @@
             <td class="mealTime">Dinner</td>
             <td *ngFor="let meal of Dinner">
                 <h3> {{meal.item_name}}</h3>
-                <img class="foodImage"
-                    [src]="meal.menu_item_image?meal.menu_item_image:'assets/Images/temporaryFoodImage.png'">
+                <input type="image" class="foodImage" title="Click for Info"
+                    [src]="meal.menu_item_image?meal.menu_item_image:'assets/Images/temporaryFoodImage.png'" (click)="openModal()" >
                 <br>
                 <h3> {{meal.menu_item_price}}</h3>
                 <input (change)="onMenuAddition($event,meal.menuid)" [id]="meal.menuid" type="number" min="1">
@@ -57,512 +59,512 @@
 
 <!--Row 1-->
 <!--Food Images from Database-->
-<div>
-    <table class="mealTable">
-        <tr>
-            <td class="mealTime">Breakfast</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type ="image" class="foodImage" id= "picRia" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR1b" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR1c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-        </tr>
-
-
-    </table>
-</div>
-
-
-<div>
-    <table class="textTable">
-        <!--Food Names from Database-->
-        <tr>
-            <td class="foodName">Food 1</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td class="foodName">Food 2</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td class="foodName">Food 3</td>
-        </tr>
-
-
-    </table>
-
-</div>
-
-<div>
-    <table class="amountTable">
+<!-- <div> -->
+    <!-- <table class="mealTable"> -->
+        <!-- <tr> -->
+            <!-- <td class="mealTime">Breakfast</td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <input type ="image" class="foodImage" id= "picRia" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()"> -->
+            <!-- </td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <input type="image" class="foodImage" id="picR1b" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()"> -->
+            <!-- </td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <input type="image" class="foodImage" id="picR1c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()"> -->
+            <!-- </td> -->
+<!--  -->
+        <!-- </tr> -->
+<!--  -->
+<!--  -->
+    <!-- </table> -->
+<!-- </div> -->
+<!--  -->
+<!--  -->
+<!-- <div> -->
+    <!-- <table class="textTable"> -->
+        <!-- Food Names from Database -->
+        <!-- <tr> -->
+            <!-- <td class="foodName">Food 1</td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td class="foodName">Food 2</td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td class="foodName">Food 3</td> -->
+        <!-- </tr> -->
+<!--  -->
+<!--  -->
+    <!-- </table> -->
+<!--  -->
+<!-- </div> -->
+<!--  -->
+<!-- <div> -->
+    <!-- <table class="amountTable"> -->
         <!--Needs Javascript Implementation-->
-        <tr>
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR1a" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-
-            <td>
+        <!-- <tr> -->
+            <!-- <td> -->
                 <!-- <button class="decrease">-</button> -->
-            </td>
+            <!-- </td> -->
 
-            <td>
-                <input id="amountInputR1b" type="number" min="0" placeholder="Enter Value">
-            </td>
+            <!-- <td> -->
+                <!-- <input id="amountInputR1a" type="number" min="0"> -->
+            <!-- </td> -->
 
-            <td>
+            <!-- <td> -->
                 <!-- <button class="increase">+</button> -->
-            </td>
+            <!-- </td> -->
 
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR1c" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
 
 
-        </tr>
+            <!-- <td> -->
+                <!-- <button class="decrease">-</button> -->
+            <!-- </td> -->
 
-    </table>
+            <!-- <td> -->
+                <!-- <input id="amountInputR1b" type="number" min="0" placeholder="Enter Value"> -->
+            <!-- </td> -->
 
-</div>
+            <!-- <td> -->
+                <!-- <button class="increase">+</button> -->
+            <!-- </td> -->
+
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+
+            <!-- <td> -->
+                <!-- <button class="decrease">-</button> -->
+            <!-- </td> -->
+
+            <!-- <td> -->
+                <!-- <input id="amountInputR1c" type="number" min="0"> -->
+            <!-- </td> -->
+
+            <!-- <td> -->
+                <!-- <button class="increase">+</button> -->
+            <!-- </td> -->
+
+
+        <!-- </tr> -->
+
+    <!-- </table> -->
+
+<!-- </div> -->
 
 <!--Row 2-->
 <!--Food Images from Database-->
-<div>
-    <table class="mealTable">
-        <tr>
-            <td class="mealTime">Lunch</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR2a" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR2b" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR2c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-        </tr>
-
-
-    </table>
-</div>
-
-
-<div>
-    <table class="textTable">
+<!-- <div> -->
+    <!-- <table class="mealTable"> -->
+        <!-- <tr> -->
+            <!-- <td class="mealTime">Lunch</td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <input type="image" class="foodImage" id="picR2a" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()"> -->
+            <!-- </td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <input type="image" class="foodImage" id="picR2b" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()"> -->
+            <!-- </td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <input type="image" class="foodImage" id="picR2c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()"> -->
+            <!-- </td> -->
+<!--  -->
+        <!-- </tr> -->
+<!--  -->
+<!--  -->
+    <!-- </table> -->
+<!-- </div> -->
+<!--  -->
+<!--  -->
+<!-- <div> -->
+    <!-- <table class="textTable"> -->
         <!--Food Names from Database-->
-        <tr>
-            <td class="foodName">Food 1</td>
+        <!-- <tr> -->
+            <!-- <td class="foodName">Food 1</td> -->
 
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
 
-            <td class="foodName">Food 2</td>
+            <!-- <td class="foodName">Food 2</td> -->
 
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
 
-            <td class="foodName">Food 3</td>
-        </tr>
+            <!-- <td class="foodName">Food 3</td> -->
+        <!-- </tr> -->
 
-
-    </table>
-
-</div>
-
-<div>
-    <table class="amountTable">
+<!--  -->
+    <!-- </table> -->
+<!--  -->
+<!-- </div> -->
+<!--  -->
+<!-- <div> -->
+    <!-- <table class="amountTable"> -->
         <!--Needs Javascript Implementation-->
-        <tr>
-            <td>
-                <button class="decrease">-</button>
-            </td>
+        <!-- <tr> -->
+            <!-- <td> -->
+                <!-- <button class="decrease">-</button> -->
+            <!-- </td> -->
 
-            <td>
-                <input id="amountInputR2a" type="number" min="0">
-            </td>
+            <!-- <td> -->
+                <!-- <input id="amountInputR2a" type="number" min="0"> -->
+            <!-- </td> -->
 
-            <td>
-                <button class="increase">+</button>
-            </td>
+            <!-- <td> -->
+                <!-- <button class="increase">+</button> -->
+            <!-- </td> -->
 
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR2b" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR2c" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
 
 
-        </tr>
+            <!-- <td> -->
+                <!-- <button class="decrease">-</button> -->
+            <!-- </td> -->
 
-    </table>
+            <!-- <td> -->
+                <!-- <input id="amountInputR2b" type="number" min="0"> -->
+            <!-- </td> -->
 
-</div>
+            <!-- <td> -->
+                <!-- <button class="increase">+</button> -->
+            <!-- </td> -->
 
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+
+            <!-- <td> -->
+                <!-- <button class="decrease">-</button> -->
+            <!-- </td> -->
+
+            <!-- <td> -->
+                <!-- <input id="amountInputR2c" type="number" min="0"> -->
+            <!-- </td> -->
+
+            <!-- <td> -->
+                <!-- <button class="increase">+</button> -->
+            <!-- </td> -->
+
+
+        <!-- </tr> -->
+
+    <!-- </table> -->
+<!--  -->
+<!-- </div> -->
+<!--  -->
 <!--Row 3-->
 <!--Food Images from Database-->
-<div>
-    <table class="mealTable">
-        <tr>
-            <td class="mealTime">Dinner</td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR3a" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <img class="foodImage" src="assets/Images/temporaryFoodImage.png">
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <input type="image" class="foodImage" id="picR3c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()">
-            </td>
-
-        </tr>
-
-
-    </table>
-</div>
-
-
-<div>
-    <table class="textTable">
+<!-- <div> -->
+    <!-- <table class="mealTable"> -->
+        <!-- <tr> -->
+            <!-- <td class="mealTime">Dinner</td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <input type="image" class="foodImage" id="picR3a" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()"> -->
+            <!-- </td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <img class="foodImage" src="assets/Images/temporaryFoodImage.png"> -->
+            <!-- </td> -->
+<!--  -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <input type="image" class="foodImage" id="picR3c" title="Click for Info" src="assets/Images/temporaryFoodImage.png" (click)="openModal()"> -->
+            <!-- </td> -->
+<!--  -->
+        <!-- </tr> -->
+<!--  -->
+<!--  -->
+    <!-- </table> -->
+<!-- </div> -->
+<!--  -->
+<!--  -->
+<!-- <div> -->
+    <!-- <table class="textTable"> -->
         <!--Food Names from Database-->
-        <tr>
-            <td class="foodName">Food 1</td>
+        <!-- <tr> -->
+            <!-- <td class="foodName">Food 1</td> -->
 
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
 
-            <td class="foodName">Food 2</td>
+            <!-- <td class="foodName">Food 2</td> -->
 
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
 
-            <td class="foodName">Food 3</td>
-        </tr>
+            <!-- <td class="foodName">Food 3</td> -->
+        <!-- </tr> -->
 
 
-    </table>
+    <!-- </table> -->
 
-</div>
+<!-- </div> -->
 
-<div>
-    <table class="amountTable">
+<!-- <div> -->
+    <!-- <table class="amountTable"> -->
         <!--Needs Javascript Implementation-->
-        <tr>
-            <td>
-                <button class="decrease">-</button>
-            </td>
+        <!-- <tr> -->
+            <!-- <td> -->
+                <!-- <button class="decrease">-</button> -->
+            <!-- </td> -->
 
-            <td>
-                <input id="amountInputR3a" type="number" min="0">
-            </td>
+            <!-- <td> -->
+                <!-- <input id="amountInputR3a" type="number" min="0"> -->
+            <!-- </td> -->
+<!--  -->
+            <!-- <td> -->
+                <!-- <button class="increase">+</button> -->
+            <!-- </td> -->
 
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR3b" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
-
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-
-            <td>
-                <button class="decrease">-</button>
-            </td>
-
-            <td>
-                <input id="amountInputR3c" type="number" min="0">
-            </td>
-
-            <td>
-                <button class="increase">+</button>
-            </td>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
 
 
-        </tr>
+            <!-- <td> -->
+                <!-- <button class="decrease">-</button> -->
+            <!-- </td> -->
 
-    </table>
+            <!-- <td> -->
+                <!-- <input id="amountInputR3b" type="number" min="0"> -->
+            <!-- </td> -->
 
-</div>
+            <!-- <td> -->
+                <!-- <button class="increase">+</button> -->
+            <!-- </td> -->
 
-<div>
-    <nav>
-        <a class="routing" href="FindChef">Back</a>
-        <a class="routing" href="OrderSummary">Continue</a>
-    </nav>
-</div>
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+            <!-- <td></td> -->
+
+            <!-- <td> -->
+                <!-- <button class="decrease">-</button> -->
+            <!-- </td> -->
+
+            <!-- <td> -->
+                <!-- <input id="amountInputR3c" type="number" min="0"> -->
+            <!-- </td> -->
+
+            <!-- <td> -->
+                <!-- <button class="increase">+</button> -->
+            <!-- </td> -->
+
+
+        <!-- </tr> -->
+<!--  -->
+    <!-- </table> -->
+<!--  -->
+<!-- </div> -->
+<!--  -->
+<!-- <div> -->
+    <!-- <nav> -->
+        <!-- <a class="routing" href="FindChef">Back</a> -->
+        <!-- <a class="routing" href="OrderSummary">Continue</a> -->
+    <!-- </nav> -->
+<!-- </div> -->
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<!-- <div id="myModal" class="modal"> -->
 
     <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close" (click)="closeModal()">&times;</span>
+    <!-- <div class="modal-content"> -->
+        <!-- <span class="close" (click)="closeModal()">&times;</span> -->
         <!--Where the popup design goes; will need to query the database for information-->
-        <table class="popupTable">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+        <!-- <table class="popupTable"> -->
+            <!-- <tr> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+
+
+
+<!--  -->
+                <!-- <td class="foodName">Name of Food Item here</td> -->
+
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+
+                <!-- <td> -->
+                    <!-- <img class="chefImage" src="assets/Images/temporaryFoodImage.png"> -->
+                <!-- </td> -->
+
+            <!-- </tr> -->
+
+
+
+        <!-- </table> -->
+
+        <!-- <p class="chefName">Cooked by Chef Name Here</p> -->
+
+
+        <!-- <img class="popupFoodImage" src="assets/Images/temporaryFoodImage.png"> -->
+
+        <!-- <p class="foodName">Food Name goes here Price: $###.##</p> -->
+
+        <!-- <table class="infoHeaderTable"> -->
+            <!-- <tr> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
 
 
 
 
-                <td class="foodName">Name of Food Item here</td>
+                <!-- <td class="infoHeader">Ingredients</td> -->
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
 
-                <td>
-                    <img class="chefImage" src="assets/Images/temporaryFoodImage.png">
-                </td>
-
-            </tr>
+                <!-- <td class="infoHeader">Interesting Facts</td> -->
 
 
-
-        </table>
-
-        <p class="chefName">Cooked by Chef Name Here</p>
-
-
-        <img class="popupFoodImage" src="assets/Images/temporaryFoodImage.png">
-
-        <p class="foodName">Food Name goes here Price: $###.##</p>
-
-        <table class="infoHeaderTable">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <!-- </tr> -->
 
 
 
+        <!-- </table> -->
 
-                <td class="infoHeader">Ingredients</td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-                <td class="infoHeader">Interesting Facts</td>
-
-
-            </tr>
+        <!-- <table class="infoBodyTable"> -->
+            <!-- <tr> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
 
 
 
-        </table>
+                <!-- <td class="infoBody">Ingredients list goes here</td> -->
 
-        <table class="infoBodyTable">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-
-
-
-                <td class="infoBody">Ingredients list goes here</td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
+                <!-- <td></td> -->
 
 
 
 
-                <td class="infoBody">Interesting facts go here</td>
+                <!-- <td class="infoBody">Interesting facts go here</td> -->
 
 
-            </tr>
-
-
-
-        </table>
+            <!-- </tr> -->
 
 
 
-    </div>
+        <!-- </table> -->
+
+
+
+    <!-- </div> -->

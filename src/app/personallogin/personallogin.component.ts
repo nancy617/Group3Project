@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personallogin.component.css']
 })
 export class PersonalloginComponent implements OnInit {
+  
 
   constructor() { }
 
