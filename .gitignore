@@ -1,0 +1,10 @@
+node_modules
+__MACOSX
+.angular/cache
+.idea
+.idea/modules.xml
+*.lock
+*.xml
+*.old
+*.iml
+*.pack

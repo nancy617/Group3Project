@@ -1,0 +1,35 @@
+
+<div class="topnav">
+    <a routerLink ="/">Ethni-Connect</a>
+    <div class ="dropdown">
+      <button class ="dropbtn">  <a routerLink="/homecookedfood">Services</a>  </button>
+     
+        <div class="dropdown-content">
+          <a routerLink="/EnterZipCode"> Order Food</a>
+          <a routerLink="/chefsignup1">Register as a Chef</a>
+        </div>
+       
+
+    </div>
+ 
+    <a routerLink="About">About Us</a>
+    <a routerLink="Contact">Contact Us</a>
+  
+   <div class="topnav-left">
+    <a *ngIf="!loggedIn()" routerLink="Login">Log-In/Sign-Up</a> 
+    <a *ngIf="loggedIn()" (click)="logOut()">Log-Out</a>
+    
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="" name="search" style="width: 100px;">
+          <button type="submit">search</button>
+        </form>
+      </div>
+  </div>
+    
+  </div>
+
+
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+  <app-loading></app-loading>
