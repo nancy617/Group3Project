@@ -8,6 +8,7 @@ import { APIConstants } from '../constants/APIConstants';
   providedIn: 'root'
 })
 export class SignInDataService {
+  redirectUrl: string|null = null;
 
     constructor(
         public http: HttpClient ,

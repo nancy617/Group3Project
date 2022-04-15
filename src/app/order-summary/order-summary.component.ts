@@ -1,5 +1,8 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/network/dataServices/cart.service';
+import { OrderService } from 'src/network/dataServices/order.service';
+import { SignInDataService } from 'src/network/dataServices/SigninDataService';
 
 @Component({
   selector: 'app-order-summary',
@@ -9,7 +12,10 @@ import { CartService } from 'src/network/dataServices/cart.service';
 export class OrderSummaryComponent implements OnInit {
   totalValue = 0;
   cart = this.cartService.cart;
-  constructor(public cartService: CartService) { }
+  constructor(public cartService: CartService,
+    public orderService: OrderService,
+    public signService: SignInDataService,
+    public router: Router) { }
 
   ngOnInit(): void {
     console.log('init');
@@ -43,6 +49,25 @@ export class OrderSummaryComponent implements OnInit {
       amount += item.menu.menu_item_price * item.quantity
     })
     return (amount/100 * 6);
+  }
+
+  placeOrder() {
+    const customerId = localStorage.getItem('loginId')
+    if(!customerId) {
+      this.signService.redirectUrl = this.router.url
+      console.log(this.signService.redirectUrl)
+      this.router.navigate(['/Login'])
+      return
+    }
+    const orders = this.cartService.cart
+    const orderData = {
+      customerLoginid: customerId,
+      totalprice: this.getOrderValue(),
+      orderItems: orders.map(item => {return {menu_id: item.menu.menuid, quantity:item.quantity}})
+    }
+    this.orderService.postOrder(orderData).subscribe(orderInfo => {
+      this.router.navigate(['/ThankYouForOrder'])
+    })
   }
 
 }
