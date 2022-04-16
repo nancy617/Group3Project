@@ -19,9 +19,9 @@
     </li>
     <li><br><br>
 
-<select name="CuisineSelection" style="font-size: 32px;font-weight: bold; text-align: center;">
+<select name="CuisineSelection" (change)="cuisineUpdate()" [(ngModel)]="activeCuisineId" style="font-size: 32px;font-weight: bold; text-align: center;">
   <option value="none" selected disabled hidden>Choose a cuisine</option>
-  <option (change)="cuisineUpdate(cus.id)" *ngFor="let cus of cuisines" [value]="cus.id">{{cus.cuisine_name}}</option>
+  <option *ngFor="let cus of cuisines" [value]="cus.id">{{cus.cuisine_name}}</option>
 </select>
 <br><br>
   <h1  style="margin-left: 100px; text-align: center; color: rgb(260, 200, 40);">Weekly Meal Menu</h1>

@@ -13,7 +13,7 @@ export class CreatemenuComponent implements OnInit {
   daysInAWeek=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
   numberOfMeals=["First","Second","Third"]
   activeDay="Tuesday"
-  activeCuisineId:number=1
+  activeCuisineId:number | any =1
   cuisines=[     {
     "id": 1,
     "cuisine_name": "Italian",
@@ -136,8 +136,8 @@ export class CreatemenuComponent implements OnInit {
     this.activeDay=column
   }
 
-  cuisineUpdate(id:number){
-    this.activeCuisineId=id
+  cuisineUpdate(){
+    this.myformGroup.reset()
   }
 
   showPreview(event:any,meal:string,index:number){
