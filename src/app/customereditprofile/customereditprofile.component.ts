@@ -16,7 +16,7 @@ export class CustomereditprofileComponent implements OnInit {
   lastName: string = '';
   street: string = '';
   city: string = '';
-  
+
   state: string = '';
   zip: string = '';
   phone: string = '';
@@ -34,32 +34,56 @@ export class CustomereditprofileComponent implements OnInit {
   imageFormData = new FormData();
   profileUrl: string = 'http://localhost:8080/customereditprofile';
 
+  fError: boolean = false;
+  lError: boolean = false;
+  aError: boolean = false;
+  cError: boolean = false;
+  pError: boolean = false;
+  eError: boolean = false;
+  sError: boolean =false;
+  zError: boolean =false;
+
   constructor(private http: HttpClient, private router: Router) { }
   ngOnInit(): void { }
 
   public onSubmit() {
-    let data = {
-      emailid: this.emailid,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      street: this.street,
-      city: this.city,
-      state: this.state,
-      zip: this.zip,
-      phone: this.phone,
-      image: this.uploadedImage
+
+    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (this.firstName == '') { this.fError = true; } else { this.fError = false }
+    if (this.lastName == '') { this.lError = true; } else { this.lError = false }
+    if (this.street== ''){this.aError = true;}else {this.aError=false}
+    if (this.phone == ''){this.pError = true;}else {this.pError=false}
+if (this.city == ''){this.cError = true;}else {this.cError=false}
+if (this.state == ''){this.sError = true;}else {this.sError=false}
+if (this.zip == ''){this.zError = true;}else {this.zError=false}
 
 
-    }
-    this.router.navigate(['customerprofile'], {
-      state: data
-    });
+    if (this.phone == '') { this.pError = true; } else { this.pError = false }
+    if (!new RegExp(regex).test(this.emailid)) {
+      this.emailError = true;
+    } else { this.emailError = false }
+    if (this.emailError == false && this.fError == false && this.cError == false
+      && this.lError == false && this.aError == false && this.pError == false && this.sError == false && this.zError == false)  {
+      this.emailError = false;
+      this.aError = false;
+      this.pError = false;
+      this.fError = false;
+      this.lError = false;
+      this.cError = false;
+      this.sError = false;
+      this.zError = false;
 
-    this.http
-      .post<any>(this.profileUrl, {
+
+
+
+
+
+
+
+      let data = {
         emailid: this.emailid,
-        firstname: this.firstName,
-        lastname: this.lastName,
+        firstName: this.firstName,
+        lastName: this.lastName,
         street: this.street,
         city: this.city,
         state: this.state,
@@ -67,35 +91,53 @@ export class CustomereditprofileComponent implements OnInit {
         phone: this.phone,
         image: this.uploadedImage
 
-      })
-      .subscribe((data) => {
-        if (data) {
+
+      }
+      this.router.navigate(['customerprofile'], {
+        state: data
+      });
+
+      this.http
+        .post<any>(this.profileUrl, {
+          emailid: this.emailid,
+          firstname: this.firstName,
+          lastname: this.lastName,
+          street: this.street,
+          city: this.city,
+          state: this.state,
+          zip: this.zip,
+          phone: this.phone,
+          image: this.uploadedImage
+
+        })
+        .subscribe((data) => {
+          if (data) {
 
 
 
-          this.editStatus = false;
-        } else {
+            this.editStatus = false;
+          } else {
             this.firstName = '';
             this.lastName = '';
             this.street = '',
-            this.city = '',
-            this.state = '',
-            this.zip = '',
-            this.phone = '';
+              this.city = '',
+              this.state = '',
+              this.zip = '',
+              this.phone = '';
             this.emailid = '';
             this.phone = '';
-        }
-      });
+          }
+        });
+    }
   }
-
   public reset() {
     this.firstName = '';
     this.lastName = '';
     this.street = '',
-    this.city = '',
-    this.state = '',
-    this.zip = '',
-    this.phone = '';
+      this.city = '',
+      this.state = '',
+      this.zip = '',
+      this.phone = '';
     this.emailid = '';
     this.phone = '';
   }
