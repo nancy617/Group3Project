@@ -16,7 +16,7 @@
                 <input type="radio" id="css" name="fav_language" [value]="cuisine.id" (click)="selectCuisine(cuisine.id)">
                 <label class="label" [for]="cuisine.cuisine_name"> {{cuisine.cuisine_name}}</label>
                 <!-- <img class="image1" [name]="cuisine.cuisine_name" src="assets/Images/temporaryFoodImage.png" width="200px" height="200px">-->
-                <img class="image1" [name]="cuisine.cuisine_image" [src]="cuisine.cuisine_image" width="200px" height="200px">
+                <img class="image1" [name]="cuisine.cuisine_image" src="data:image/jpeg;base64,{{cuisine.cuisine_image}}" width="200px" height="200px">
             </td>
         </tr>
     </table>
