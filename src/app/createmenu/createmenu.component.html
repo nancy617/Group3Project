@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+
   </head>
   <body>
     <div class="header"></div>
-    <div class="box1">
+    <div class="box1" > 
     <ul>
-      <li>
-    <img src="assets/Images/enrique olvera.jpeg" alt="enrique olvera" style="height:120px; border-radius: 50%; margin-left:40px; " >
-    <p style="font-size: small; margin-left: 20px;">Hi, Chef. <b style="color: darkblue;">Enrique Olvera!</b></p>
-    <input type="text" id="brandname" name="brandname" size="17" placeholder="Enter Your Brand Name"  style="font-size: large; background-color:lightgray;">
+      <li style="margin-left: 190px;">
+   
+    <p style="font-size: 30px; "> <b> Here is where you will customize your menu</b></p>
+   
     </li>
-    <li><br><br>
+    <li style="margin-left: 210px;">
 
-<select name="CuisineSelection" style="font-size: 32px;font-weight: bold; text-align: center;">
+<select name="CuisineSelection" style="font-size: 30px;font-weight: bold; text-align: center;">
   <option value="none" selected disabled hidden>Choose a cuisine</option>
   <option (change)="cuisineUpdate(cus.id)" *ngFor="let cus of cuisines" [value]="cus.id">{{cus.cuisine_name}}</option>
 </select>
