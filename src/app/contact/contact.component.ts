@@ -43,7 +43,7 @@ export class ContactComponent implements OnInit {
           this.contactStatus = false;
         }
         else{
-         
+          this.router.navigate(['/FormSubmitted'])
           this.name = '';
           this.emailid = '';
           this.message = '';
