@@ -65,7 +65,7 @@ export class CartService {
     
   }
 
-  setCart(selectedMenus: any) {
-    this.cart = selectedMenus
+  setCart(selectedMenus: Array<{menu:any, quantity: number}>) {
+    this.cart = selectedMenus.filter( item => item.quantity !==0)
   }
 }

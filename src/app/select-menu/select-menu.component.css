@@ -228,3 +228,30 @@ button.sub {
     text-align: center;
     margin: 50px;
 }
+
+.chef {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.title span {
+    padding-left: 10px;
+    color: rgb(30 105 209);
+  }
+
+.chef-pic {
+    border-radius: 30%;
+    overflow: hidden;
+}
+
+.popup-foodImage {
+    max-width: 80%;
+    max-height: 300px;
+}
+
+.menu-ingrediant {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/network/dataServices/cart.service';
@@ -15,7 +16,8 @@ export class OrderSummaryComponent implements OnInit {
   constructor(public cartService: CartService,
     public orderService: OrderService,
     public signService: SignInDataService,
-    public router: Router) { }
+    public router: Router,
+    public location: Location) { }
 
   ngOnInit(): void {
     console.log('init');
@@ -70,4 +72,7 @@ export class OrderSummaryComponent implements OnInit {
     })
   }
 
+  navigatePreviousPage() {
+    this.location.back()
+  }
 }

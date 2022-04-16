@@ -6,7 +6,7 @@
 <div class="chef-container">
   <div class="chef" *ngFor="let chef of chefs">
     <div class="chef-pic">
-      <img class="image1" [name]="chef.chef_image" src="data:image/jpeg;base64,{{chef.chef_image}}" width="200px" height="200px">
+      <img class="image1" [name]="chef.chef_image" [src]="chef.chef_image" width="200px" height="200px">
      <!-- <img name="chef.chef_image" src="assets/Images/nancy.png"/>-->
      
     </div>
@@ -26,6 +26,6 @@
 </div>
 <div>
   <nav>
-    <a class="routing" href="SelectCuisine">Back</a>
+    <a class="routing" (click)="navigatePreviousPage()">Back</a>
   </nav>
 </div>

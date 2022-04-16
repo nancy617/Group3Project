@@ -7,7 +7,7 @@
 <div class="cart">
   <div class="cart-item" *ngFor="let item of cartService.cart">
     <div class="menu-img">
-      <img class="foodImage" src="data:image/png;base64,{{item.menu.menu_item_image}}" width="200px" height="200px" />
+      <img class="foodImage" [src]="item.menu.menu_item_image" width="200px" height="200px" />
     </div>
     <div class="menu-details">
       <div class="menu-title">
@@ -181,7 +181,7 @@
 
 <div style="margin-bottom: -300px;">
   <nav>
-    <a class="routing" href="SelectMenu">Back</a>
+    <a class="routing" (click)="navigatePreviousPage()">Back</a>
     <a class="routing" (click)="placeOrder()">Continue</a>
   </nav>
 </div>

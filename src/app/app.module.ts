@@ -52,6 +52,7 @@ import { ReserpwdemailcompleteComponent } from './reserpwdemailcomplete/reserpwd
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
 import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -108,7 +109,8 @@ import { CustomereditprofileComponent } from './customereditprofile/customeredit
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    NgbModule 
   ],
   providers: [ChefSignupDataService,AuthGuard,ChefAuthGuard,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }, ],

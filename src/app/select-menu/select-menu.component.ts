@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from 'src/network/dataServices/cart.service';
 import { FetchMenuByChefIdDataService } from 'src/network/dataServices/FetchMenuByChefIdDataService';
 import { GetChefByIdDataService } from 'src/network/dataServices/GetChefByIdDataService';
@@ -96,10 +98,15 @@ export class SelectMenuComponent implements OnInit {
   Dinner:any=[]
 
   orders: Array<any> = [];
+  clickedMenu : any;
+  @ViewChild('content', { read: TemplateRef }) content :TemplateRef<any> | undefined;
 
   constructor(private _FetchMenuByChefIdDataService:FetchMenuByChefIdDataService,
     private _Activatedroute:ActivatedRoute, public cartService: CartService, 
-    public router: Router, public chefService: GetChefByIdDataService) { }
+    public router: Router, 
+    public chefService: GetChefByIdDataService,
+    public location: Location,
+    private modalService: NgbModal) { }
 
   ngOnInit(): void {
 
@@ -121,6 +128,7 @@ export class SelectMenuComponent implements OnInit {
           console.log(this.Dinner);
           localStorage.setItem('data1',data.chefMenuList)
           console.log(localStorage.getItem("data1"))
+          this.loadFromCart()
         },
         error:err=>console.log(err)
       })
@@ -190,6 +198,21 @@ export class SelectMenuComponent implements OnInit {
     })
     this.cartService.setCart(orders)
     this.router.navigate(['/OrderSummary'])
+  }
+
+  loadFromCart() {
+    this.orders = this.cartService.cart.map(item => {
+      return { menuid: item.menu.menuid, quantity: item.quantity}
+    })
+  }
+
+  navigatePreviousPage() {
+    this.location.back()
+  }
+
+  showMenuModal(menu: any) {
+    this.clickedMenu = menu
+    this.modalService.open(this.content, { centered: true });
   }
 
 

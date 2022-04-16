@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FetchChefsForCuisinesAndZipCodeDataService } from 'src/network/dataServices/FetchChefsForCuisinesAndZipCodeDataService';
@@ -48,7 +49,8 @@ export class FindChefComponent implements OnInit {
 
 
   constructor(private _FetchChefsForCuisinesAndZipCodeDataService:FetchChefsForCuisinesAndZipCodeDataService,
-    private _Activatedroute:ActivatedRoute) { }
+    private _Activatedroute:ActivatedRoute,
+    public location: Location) { }
 
   ngOnInit(): void {
 
@@ -77,6 +79,10 @@ export class FindChefComponent implements OnInit {
       },
       error:err=>console.log(err)
   })
+  }
+
+  navigatePreviousPage() {
+    this.location.back()
   }
 
 }

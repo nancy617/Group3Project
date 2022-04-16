@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FetchCuisinesForZipCodeDataService } from 'src/network/dataServices/FetchCuisinesForZipCodeDataService';
 
 @Component({
@@ -9,10 +9,11 @@ import { FetchCuisinesForZipCodeDataService } from 'src/network/dataServices/Fet
 })
 export class SelectCuisineComponent implements OnInit {
     zipCode:number=0
-    selectedCuisine: number = 1;
+    selectedCuisine: number | null = null;
     cuisines:any=[]
     constructor( private _Activatedroute:ActivatedRoute,
-                 private _FetchCuisinesForZipCodeDataService: FetchCuisinesForZipCodeDataService ) { }
+                 private _FetchCuisinesForZipCodeDataService: FetchCuisinesForZipCodeDataService,
+                 public router: Router) { }
 
     ngOnInit(): void {
 
@@ -45,5 +46,13 @@ export class SelectCuisineComponent implements OnInit {
             },
             error:err=>console.log(err)
         })
+    }
+
+    goToNextStep() {
+        if (this.selectedCuisine === undefined ||this.selectedCuisine === null ) {
+            alert('Please select a cusine to proceed')
+            return
+        }
+        this.router.navigate(['/FindChef',this.zipCode,this.selectedCuisine])
     }
 }

@@ -10,7 +10,41 @@
     <button *ngFor="let column of daysInAWeek" (click)="updateActiveDay(column)" class="day"
         [style.background-color]="column==activeDay? 'rgb(260, 200, 40)': ''">{{column}}</button>
 </div>
-
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">{{clickedMenu.item_name}}</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="chef">
+            <div class="chef-details">
+                <div class="title">Delivered by<span>chef {{chef.chef_fname + " " + chef.chef_lname | titlecase}}</span></div>
+              </div>
+            <div class="chef-pic">
+              <img class="image1" [name]="chef.chef_image" [src]="chef.chef_image" width="100px" height="100px">             
+            </div>
+          </div>
+          <img class="popup-foodImage" [src]="clickedMenu.menu_item_image">
+          <div class="menu-ingrediant">
+              <div class="ing-container">
+                Ingredients:
+                <ol class="ingrediants">
+                  <li class="ing" *ngFor="let ing of clickedMenu.item_ingredients.split(',')">{{ing}}</li>
+                </ol>
+              </div>
+              <div class="fact-container">
+                Interesting Facts:
+                <ol class="ingrediants">
+                  <li class="ing" *ngFor="let ing of clickedMenu.item_intresting_facts.split(',')">{{ing}}</li>
+                </ol>
+              </div>
+              
+          </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
 <ng-template #noMenu>
     <div class="nomenu">
         Menu for the day yet to be added!!!
@@ -20,8 +54,8 @@
 <div class="menu-container" *ngIf="!isMenuEmpty; else noMenu">
     <div class="meal breakfast" *ngIf="Breakfast.length">
         <div class="weekday">Breakfast</div>
-        <div class="menu" *ngFor="let menu of Breakfast">
-            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
+        <div class="menu" *ngFor="let menu of Breakfast" (click)="showMenuModal(menu)">
+            <img class="foodImage" [src]="menu.menu_item_image">
             <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
             <div class="menu-action">
                 <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
@@ -30,8 +64,8 @@
     </div>
     <div class="meal Lunch" *ngIf="Lunch.length">
         <div class="weekday">Lunch</div>
-        <div class="menu" *ngFor="let menu of Lunch">
-            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
+        <div class="menu" *ngFor="let menu of Lunch" (click)="showMenuModal(menu)">
+            <img class="foodImage" [src]="menu.menu_item_image">
             <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
             <div class="menu-action">
                 <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
@@ -40,8 +74,8 @@
     </div>
     <div class="meal Dinner" *ngIf="Dinner.length">
         <div class="weekday">Dinner</div>
-        <div class="menu" *ngFor="let menu of Dinner">
-            <img class="foodImage" src="data:image/png;base64,{{menu.menu_item_image}}">
+        <div class="menu" *ngFor="let menu of Dinner" (click)="showMenuModal(menu)">
+            <img class="foodImage" [src]="menu.menu_item_image">
             <div class="name"> {{menu.item_name}} -> {{menu.menu_item_price | currency:'USD' }} </div> 
             <div class="menu-action">
                 <button class="sub" (click)="reduceQuantity(menu)">&#8722;</button><span>{{getQuantity(menu.menuid)}}</span><button class="add" (click)="increaseQuantity(menu)">+</button>
@@ -53,7 +87,7 @@
 
 <div>
     <nav>
-        <a class="routing" href="FindChef">Back</a>
+        <a class="routing" (click)="navigatePreviousPage()">Back</a>
         <a class="routing" (click)="goToOrderSummary()">Continue</a>
     </nav>
 </div>
