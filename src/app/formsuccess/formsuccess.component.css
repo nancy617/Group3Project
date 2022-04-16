@@ -1,0 +1,23 @@
+
+    button {
+      background-color: #F6c515;
+      color: black;
+      padding: 14px 20px;
+      margin: 18px 0;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      width: 60%;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    
+    
+    span.psw {
+      
+      margin-left: 140px;}
+    
+    span.click {  margin-left: 200px;}

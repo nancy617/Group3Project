@@ -36,19 +36,7 @@
   <body>
     <div class="container" style="margin-top: 45px">
       <div class="col-md" style="text-align: center">
-        <img
-          src="assets/Images/ContactInfor.png"
-          alt="contact infor"
-          style="
-            height: 100px;
-            float: right;
-            margin-right: 200px;
-            height: 120px;
-          "
-        />
-        <h2 style="margin-left: 410px">Contact Us</h2>
-
-        <br />
+        <h2>Contact Us</h2>
       </div>
 
       <div
@@ -56,15 +44,15 @@
         style="margin-top: -20px; text-align: center"
       >
         <p>
-          Please reach us with the contact information shown to the right, or
-          leave us a message using the form below.
+          Don't hesitate to reach out with the contact information shown to the
+          right, or send us a message using the form below.
         </p>
       </div>
     </div>
 
-    <div class="container">
-      <div class="col-md-6 col-md-offset-3">
-        <form [style.display]="contactStatus == true ? 'block' : 'none'">
+    <div class="container" style="margin-bottom: 610px;">
+      <div class="col-md-6 col-md-offset-3" >
+        <form [style.display]="contactStatus==true?'block':'none'">
           <br />
           <h2 style="text-align: center; font-size: medium">
             Fill out this form and we will get back to you as soon as possible!
@@ -75,8 +63,10 @@
             placeholder="Enter Name"
             required
             name="name"
+            [style.background-color]="nameError==false?'':'pink'"
             [(ngModel)]="name"
           />
+          <div *ngIf="nameError" style="color: red; margin-left: 110px;">*Please enter your name</div>
           <br />
 
           <input
@@ -85,12 +75,10 @@
             placeholder="Enter Email"
             required
             name="emailid"
-            [style.background-color]="emailError == false ? '' : 'pink'"
+            [style.background-color]="emailError==false?'':'pink'"
             [(ngModel)]="emailid"
           />
-          <div *ngIf="emailError" style="color: red; float: right">
-            *Email is invalid
-          </div>
+          <div *ngIf="emailError" style="color: red;margin-left: 110px;">*Email is invalid</div>
           <br />
 
           <input
@@ -99,27 +87,23 @@
             placeholder="Enter Message here"
             required
             name="message"
+            [style.background-color]="msgError==false?'':'pink'"
             [(ngModel)]="message"
           />
-
-          <button (click)="onSubmit()" type="submit" style="margin-left: 170px">
-            Submit
-          </button>
+          <div *ngIf="msgError" style="color: red; margin-left: 110px;">*Please enter your message</div>
           <br />
+          <button (click)="onSubmit()" type="submit" style="margin-left: 170px">Submit</button>
+          <br />
+          
         </form>
-        <div [style.display]="contactStatus == false ? 'block' : 'none'">
-          <h3 style="text-align: center">Thank you!</h3>
-          <button
-            style="display: block; margin-left: auto; margin-right: auto"
-            (click)="reset()"
-          >
-            Another Message?
-          </button>
-        </div>
+        
+        
+        <!-- <div [style.display]="contactStatus==false?'block':'none'"> -->
+          <!-- <h3 style="text-align: center">Thank you!</h3> -->
+          <!-- <button style="display: block;margin-left: auto;margin-right: auto;" (click)="reset()">Another Message?</button> -->
+        <!-- </div> -->
+        
       </div>
     </div>
   </body>
-
-
-
 </html>

@@ -52,6 +52,7 @@ import { ReserpwdemailcompleteComponent } from './reserpwdemailcomplete/reserpwd
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { ChefReviewsComponent } from './chef-reviews/chef-reviews.component';
 import { CustomereditprofileComponent } from './customereditprofile/customereditprofile.component';
+import { FormsuccessComponent } from './formsuccess/formsuccess.component';
 
 
 
@@ -99,7 +100,8 @@ import { CustomereditprofileComponent } from './customereditprofile/customeredit
 
     OrderHistoryComponent,
     ChefReviewsComponent,
-    CustomereditprofileComponent
+    CustomereditprofileComponent,
+    FormsuccessComponent
 
 
   ],
