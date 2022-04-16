@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/network/dataServices/cart.service';
+import { GetChefByIdDataService } from 'src/network/dataServices/GetChefByIdDataService';
 import { OrderService } from 'src/network/dataServices/order.service';
 import { SignInDataService } from 'src/network/dataServices/SigninDataService';
 
@@ -13,14 +14,19 @@ import { SignInDataService } from 'src/network/dataServices/SigninDataService';
 export class OrderSummaryComponent implements OnInit {
   totalValue = 0;
   cart = this.cartService.cart;
+  chef: any;
   constructor(public cartService: CartService,
     public orderService: OrderService,
     public signService: SignInDataService,
     public router: Router,
-    public location: Location) { }
+    public location: Location,
+    public chefService: GetChefByIdDataService) { }
 
   ngOnInit(): void {
     console.log('init');
+    const chefId = Number(localStorage.getItem('chefId')) ;
+      this.chefService.prepareRequestWithParameters([chefId])
+      this.chefService.queryTheServer().subscribe(data => this.chef = data)
     
     // this.cartService.menu.forEach(menu => this.cartService.addMenuToCart(menu))
   }

@@ -79,16 +79,18 @@
     }
 
     table.infoTable{
-        margin-left:18.5%;
+        margin:auto;
         margin-top: 20px;
+        min-width: 75%;
     }
 
     .infoHeadText{
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .infoText{
-        font-size: 15px;
+        font-size: 18px;
+        font-weight: bold;
     }
 
     /*Styling router buttons*/
@@ -118,7 +120,9 @@
 .menu-details {
     margin-left: 12px;
     font-weight: bold;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .menu-action {

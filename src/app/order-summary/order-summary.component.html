@@ -133,46 +133,15 @@
 
 <!--Order Pickup location and Payment Request-->
 
-<div>
+<div *ngIf="chef">
   <table class="infoTable">
     <tr>
       <td class="infoHeadText">Chef Pickup Address:</td>
-
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
       <td class="infoHeadText">Chef Payment Instructions:</td>
     </tr>
-  </table>
-</div>
-
-<div>
-  <table class="infoTable">
     <tr>
-      <td class="infoText">Chef Pickup Address Here</td>
-
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
-      <td class="infoText">Chef Payment Instructions here</td>
+      <td class="infoText">{{chef.chef_street + ' ' + chef.chef_city + ', ' + chef.chef_state + ' ' + chef.chef_zip}}</td>
+      <td class="infoText">{{chef.chef_paymode}}</td>
     </tr>
   </table>
 </div>

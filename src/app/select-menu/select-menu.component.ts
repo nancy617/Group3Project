@@ -127,6 +127,7 @@ export class SelectMenuComponent implements OnInit {
           console.log(this.Lunch);
           console.log(this.Dinner);
           localStorage.setItem('data1',data.chefMenuList)
+          localStorage.setItem('chefId', this.chefId.toString())
           console.log(localStorage.getItem("data1"))
           this.loadFromCart()
         },
