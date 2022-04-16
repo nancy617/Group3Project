@@ -43,6 +43,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
 import { CustomerwitechefreviewComponent } from './customerwitechefreview/customerwitechefreview.component';
 import { CustomerviewchefpageComponent } from './customerviewchefpage/customerviewchefpage.component';
 import { CustomerreviewsuccessComponent } from './customerreviewsuccess/customerreviewsuccess.component';
+import { FormsuccessComponent } from './formsuccess/formsuccess.component';
 
 
 
@@ -88,8 +89,8 @@ const routes: Routes = [
 {component:CustomereditprofileComponent, path:"CustomerEditProfile"},
 {component:CustomerwitechefreviewComponent, path:"WriteReview"},
 {component:CustomerviewchefpageComponent, path: "ViewChef"},
-{component:CustomerreviewsuccessComponent, path: "ReviewSuccess"}
-
+{component:CustomerreviewsuccessComponent, path: "ReviewSuccess"},
+{component:FormsuccessComponent, path: "FormSubmitted"}
 
 
 ];

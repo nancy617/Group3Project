@@ -32,7 +32,12 @@ export class ChefeditprofileComponent implements OnInit {
   image: any;
   images: string[] = [];
   imageFormData = new FormData();
-
+  fError: boolean = false;
+  lError: boolean = false;
+  aError: boolean = false;
+  cError: boolean = false;
+  pError: boolean = false;
+  eError: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -43,15 +48,23 @@ export class ChefeditprofileComponent implements OnInit {
   ];
 
   public onSubmit() {
-    // const regex =
-    //   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    // if (!new RegExp(regex).test(this.emailid)) {
-    //   this.emailError = true;
-    // } else {
-    //   this.emailError = false;
-      // console.log('firstName: ', this.firstName);
-      // console.log('emailid: ', this.emailid);
-      // console.log('lastName: ', this.lastName);
+    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (this.firstName == ''){this.fError = true;}else {this.fError=false}
+    if (this.lastName == ''){this.lError = true;}else {this.lError=false}
+    if (this.address== ''){this.aError = true;}else {this.aError=false}
+    if (this.phone == ''){this.pError = true;}else {this.pError=false}
+    if (this.cookExp == ''){this.cError = true;}else {this.cError=false}
+    if(!new RegExp(regex).test(this.emailid)){
+      this.emailError = true;
+    }else {this.emailError=false}
+    if (this.emailError==false && this.fError ==false && this.cError==false
+      && this.lError==false && this.aError==false && this.pError ==false) {
+      this.emailError = false;
+      this.aError= false;
+      this.pError= false;
+      this.fError= false;
+      this.lError= false;
+      this.cError= false;
       let data = {
         emailid: this.emailid,
         firstname: this.firstName,
@@ -94,7 +107,7 @@ export class ChefeditprofileComponent implements OnInit {
             this.phone = '';
           }
         });
-      // }
+      }
   }
 
   public reset() {

@@ -46,36 +46,37 @@
   </div>
 
 
-  <div class="container">
+  <div class="container" style="margin-bottom: 1000px;">
     <div class="col-md-6 col-md-offset-3">
       <form [formGroup]="profileForm" class="form" id="profileForm">
         <br>
         <h2 style="text-align: center; font-size: medium;"></h2>
 
-        <input formControlName="fname"  type="text" style="margin-top: 10px;" placeholder="First Name" required>
+        <input formControlName="fname"  type="text" style="margin-top: 10px;" placeholder="First Name *" required>
       
-        <input formControlName="lname" type="text" style="margin-top: 2px;" placeholder="Last Name" required>
+        <input formControlName="lname" type="text" style="margin-top: 2px;" placeholder="Last Name *" required>
 
-        <input formControlName="chef_phone" type="text" style="margin-top: 10px;" placeholder="Phone Number" required>
+        <input formControlName="chef_phone" type="text" style="margin-top: 10px;" placeholder="Phone Number *" required>
 
-         <input formControlName="emailid" type="text" style="margin-top: 10px;" placeholder="Email" required>
+         <input formControlName="emailid" type="text" style="margin-top: 10px;" placeholder="Email *" required>
 
-        <input formControlName="chef_street" type="text" style="margin-top: 2px;" placeholder="Street Address" required>
+        <input formControlName="chef_street" type="text" style="margin-top: 2px;" placeholder="Street Address *" required>
 
-        <input formControlName="chef_city" type="text" style="margin-top: 2px;" placeholder="City" required>
+        <input formControlName="chef_city" type="text" style="margin-top: 2px;" placeholder="City *" required>
 
-        <input formControlName="chef_state"  type="text" style="margin-top: 2px; " placeholder="State" required>
+        <input formControlName="chef_state"  type="text" style="margin-top: 2px; " placeholder="State *" required>
 
-        <input formControlName="chef_zip" type="text" style="margin-top: 2px; " placeholder="Zip Code" required>
+        <input formControlName="chef_zip" type="text" style="margin-top: 2px; " placeholder="Zip Code *" required>
 
-        <input formControlName="chef_experience" type="text" style="margin-top: 2px; " placeholder="Experience" required>
+        <input formControlName="chef_experience" type="text" style="margin-top: 2px; " placeholder="Experience *" required>
         
         <br>
 
         <h3>Upload your photo</h3>
         <h4>Your picture must show your face clearly (Max. 5MB)</h4>
-        <input formControlName="file" (change)="uploadFile($event)" type="file" style="margin-top: 2px; " required>
+        <span style = "margin-left: 69px;">
 
+        <input  formControlName="file" (change)="uploadFile($event)" type="file" style="margin-top: 2px; " required> </span>
       <!-- IMAGE ADD --> 
       <br>
       <br>

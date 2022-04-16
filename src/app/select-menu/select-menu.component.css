@@ -1,33 +1,4 @@
-/*Starts circles near center*/
-.progressCircle{
-    margin-left: 10%;
-    }
 
-    /*Formats Current Circle*/
-   .progressCircle a.current{
-    margin: 25px;
-    line-height: 250px;
-    border-radius: 50%;
-    font-size: 15px;
-    color: #000;
-    text-align: center;
-    background: #F6c515;
-    padding: 75px 50px;
-    border-style:outset;
-   } 
-
-   /*Formats non-Current Circles*/
-   .progressCircle a.notCurrent{
-    margin: 25px;
-    line-height: 250px;
-    border-radius: 50%;
-    font-size: 15px;
-    color: #808080;
-    text-align: center;
-    background: #dbdada;
-    padding: 75px 50px;
-    border-style:outset;
-   } 
 
     /* Rest of styling*/
     h1{
@@ -45,9 +16,9 @@
     }
 
     .day{
-        width:200px;
+        width:150px;
         text-align:center;
-        padding: 20px 60px;
+        padding: 20px 10px;
         display: inline-block;
         margin-top: 15px;
         color: black;
@@ -70,7 +41,7 @@
     /*Food Items*/
 
     table.mealTable{
-        margin-left:2.5%;
+        margin-left:10%;
         margin-top: 100px;
     }
 
