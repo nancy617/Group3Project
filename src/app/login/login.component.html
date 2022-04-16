@@ -43,7 +43,7 @@
     <h2 style="text-align: center;"> Please login to your account!</h2>
   </div>
 
-  <div class="container">
+  <div class="container " style= "margin-bottom: 600px ">
     <div class="col-md-6 col-md-offset-3">
       <form [formGroup]="loginForm" class="form" id="login">
         <br>
@@ -71,7 +71,7 @@
         <br><br>
 
         <label style="margin-left: 170px;">
-          <input type="checkbox" style="margin-top: 30px;" check="check" name="agree"> I agree to follow the <a
+          <input type="checkbox" style="margin-top: 30px;" check="check" name="agree" required> I agree to follow the <a
           routerLink="/Terms">Terms and Conditions.</a>
         </label>
         <button type="submit" (click)="login()" style="margin-left: 170px;">Login</button> <br>

@@ -24,12 +24,12 @@
   <option (change)="cuisineUpdate(cus.id)" *ngFor="let cus of cuisines" [value]="cus.id">{{cus.cuisine_name}}</option>
 </select>
 <br><br>
-  <h1  style="margin-left: 100px; text-align: center; color: rgb(260, 200, 40);">Weekly Meal Menu</h1>
+  <h1  style="margin-left: 110px; text-align: center; color: rgb(260, 200, 40);">Weekly Meal Menu</h1>
       <p style="margin-left: 100px;font-size: 14px;">Fresh, delicious, convenient, customized, cost-effective, home-cooked foods</p>
   </li>
 
 <table >
-<tr style="font-size: 20px;border: 2px;">
+<tr style="font-size: 20px;border: 2px; margin-left: 100px;">
   <th *ngFor = "let column of daysInAWeek" (click)="updateActiveDay(column)" [style.background-color]="column==activeDay? 'rgb(260, 200, 40)': ''" >
       {{column}}
   </th>
