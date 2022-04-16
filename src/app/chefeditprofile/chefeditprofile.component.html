@@ -9,7 +9,7 @@
   </head>
   <body>
     <br />
-    <h1 style="text-align: center">Update Your Personal Profile</h1>
+    <h1 style="text-align: center">Account Details</h1>
     <br />
     <form class="form" id="login" style="margin-top: 10px">
       <br />
@@ -25,7 +25,10 @@
               required
               name="firstname"
               [(ngModel)]="firstName"
-            /><br /><br />
+            /><br />
+            <div *ngIf="fError" style="color: red;">*input is invalid</div>
+            <br />
+            <br />
             <label for="Name"><b>Last Name:</b></label
             >&nbsp;
             <input
@@ -35,7 +38,10 @@
               required
               name="lastname"
               [(ngModel)]="lastName"
-            /><br /><br />
+            /><br />            
+            <div *ngIf="lError" style="color: red;">*input is invalid</div>
+            <br />
+            <br />
             <input type="file" (change)="onFileChange($event)" />
             <img
               *ngFor="let url of images"
@@ -71,7 +77,10 @@
               required
               name="address"
               [(ngModel)]="address"
-            /><br /><br />
+            /><br />
+            <div *ngIf="aError" style="color: red;">*input is invalid</div>
+            <br />
+            <br />
             <label for="year"><b>Cooking experience (years): </b></label>&nbsp;
             <input
               type="text"
@@ -82,7 +91,10 @@
               required
               name="cookExp"
               [(ngModel)]="cookExp"
-            /><br /><br />
+            /><br />
+            <div *ngIf="cError" style="color: red;">*input is invalid</div>
+            <br />
+            <br />
             <label for="date"><b>Member Since: </b></label>&nbsp;
             <input type="date" id="date" name="date" /><br /><br />
 
@@ -97,7 +109,10 @@
               name="phone"
               [(ngModel)]="phone"
             /><br />
-            <br /><b><label for="email"> Email:</label> </b>&nbsp;
+            <div *ngIf="pError" style="color: red;">*input is invalid</div>
+            <br />
+            <br />
+            <b><label for="email"> Email:</label> </b>&nbsp;
             <input
               type="email"
               id="Email"
@@ -106,6 +121,8 @@
               name="emailid"
               [(ngModel)]="emailid"
             />
+            <div *ngIf="emailError" style="color: red;">*input is invalid</div>
+            <br />
           </li>
         </ul>
       </div>
@@ -122,7 +139,7 @@
           font-size: 25px;
           border-radius: 12%;
           margin-top: 50px;
-          margin-right: 350px;
+          margin-right: 340px;
         "
       >
         Save Profile
@@ -135,6 +152,5 @@
     </script>
   </body>
 
-
-
 </html>
+
