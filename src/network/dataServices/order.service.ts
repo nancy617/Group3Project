@@ -22,10 +22,11 @@ export class OrderService {
     return this.http.get(APIConstants.baseURL()+`/orderbyCustLoginId/${cutomerId}` ,{headers})
   }
 
-  postOrderRating(rating:any){
+postOrderRating(rating:any){
     const headers = new HttpHeaders().
     set('accept', 'application/json')
-    return this.http.post(APIConstants.baseURL()+`/updateRating`, rating ,{headers})
+    
+    return this.http.put(APIConstants.baseURL()+`/updateRating`, rating ,{headers})
    
 
   }

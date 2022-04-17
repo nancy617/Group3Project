@@ -12,7 +12,9 @@ export class OrderHistoryComponent implements OnInit {
   viewOrder: any;
   selected = 0;
   hovered = 0;
-  rating: {[key:string]: number} = {};
+  oid = 0;
+  rating: {[key:number]: number} = {};
+  origRating: {[key:number]: number} = {};
   @ViewChild('content', { read: TemplateRef }) content :TemplateRef<any> | undefined;
   constructor(private orderService: OrderService, private modalService: NgbModal) { }
 
@@ -20,7 +22,9 @@ export class OrderHistoryComponent implements OnInit {
     this.orderService.getOrdersByCustomerId()
     .subscribe(data=>{
       this.orders = data
-      this.rating = this.orders.reduce((acc:any ,order: any) => {return {...acc, [order.orderid]: 0}}, {})
+      this.rating = this.orders.reduce((acc:any ,order: any) => {return {...acc, [Number(order.orderid)]: order.rating}}, {})
+      this.origRating = this.orders.reduce((acc:any ,order: any) => {return {...acc, [Number(order.orderid)]: order.rating}}, {})
+
     })
   }
 
@@ -29,7 +33,7 @@ export class OrderHistoryComponent implements OnInit {
     this.modalService.open(this.content, { centered: true, size: 'lg' });
   }
 
-  setRating($event: any, id: any) {
+  setRating($event: any, id: number) {
     console.log({id, $event})
   }
 
@@ -42,8 +46,11 @@ export class OrderHistoryComponent implements OnInit {
 
     Object.entries(this.rating).forEach(([orderid, ratings])=> {
       console.log({orderid, ratings});
-      this.orderService.postOrderRating({orderid, ratings})
-      .subscribe()
+      if(this.rating[Number(orderid)]!=this.origRating[Number(orderid)])
+      {
+        this.orderService.postOrderRating({orderid, ratings})
+        .subscribe()
+      }
       })
   }
 
