@@ -1,36 +1,37 @@
 <div class="topnav">
   <!-- <img src="assets/Images/logo2.png" alt="logo" style="height: 46px;margin:3px 0 0 10px; float: left; border-radius: 50%;" /> -->
-  <a href ="/"><b style= "font-size: 20px">Ethni-Connect </b></a>
+  <a href="/"
+    ><b style="font-size: 20px; margin-left: 30px">Ethni-Connect </b></a
+  >
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet" > -->
- 
+
   <a routerLink="/">Home</a>
 
-
   <div class="dropdown">
-    <button class="dropbtn "> <a routerLink="/homecookedfood">Services</a> </button>
+    <button class="dropbtn">
+      <a routerLink="/homecookedfood">Services</a>
+    </button>
     <div class="dropdown-content">
-      <a routerLink="/EnterZipCode"> Order Food</a><br>
+      <a routerLink="/EnterZipCode"> Order Food</a><br />
       <a routerLink="/chefsignup1">Register as a Chef</a>
     </div>
   </div>
-  <a *ngIf="loggedIn()" routerLink="/OrderHistory" >My Orders</a>
+  <a *ngIf="loggedIn()" routerLink="/OrderHistory">My Orders</a>
   <a routerLink="About">About Us</a>
   <a routerLink="Contact">Contact Us</a>
 
-  <div class="topnav-left">
+  <div class="topnav-left" style="margin-right: 200px">
     <a *ngIf="!loggedIn()" routerLink="Login">Log-In/Sign-Up</a>
     <a *ngIf="loggedIn()" (click)="logOut()">Log-Out</a>
 
-    <div class="search-container">
+    <!-- <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="" name="search" style="width: 100px;">
         <button type="submit">search</button>
       </form>
-    </div>
+    </div> -->
   </div>
-
 </div>
-
 
 <router-outlet></router-outlet>
 <app-footer></app-footer>

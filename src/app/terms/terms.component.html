@@ -32,7 +32,7 @@
   </head>
 
   <body>
-    <div class="terms">
+    <div class="terms" style="margin-bottom: -400px;">
       <div class="box1">
         <h1 style="text-align: center">Terms and Conditions of Service</h1>
         <p style="text-align: center">Last updated: Feb, 10th 2022</p>
@@ -70,7 +70,7 @@
           to our services without agreeing to these Terms and Conditions.s
         </p>
       </div>
-      <div class="box3">
+      <div class="box3" >
         <h2>Service Availability</h2>
         <p>
           Our Website is intended for use only by people residing in Great
@@ -91,11 +91,13 @@
           colors of our Products. However, the actual colors you see depend on
           your monitor or device, and thus we cannot guarantee that the colors
           of Products you see when viewing the Website will be accurate.
+          Entering into binding contracts; You are at least 18 years old; You
+          are a resident of the United States; and You are accessing our Website
+          from the United States.
         </p>
       </div>
-
+      <h2>Accessing the Website</h2>
       <div [ngClass]="{ limitTextHeight: isReadMore }">
-        <h2>Accessing the Website</h2>
         <p>
           You may access portions of the Website without registering. However,
           in order to access some portions and features of the Website, and to
@@ -109,15 +111,10 @@
           </span>
         </p>
       </div>
-      
+      <br /><br />
       <button type="button" (click)="showText()">
         {{ isReadMore ? "Read More" : "Read Less" }}
       </button>
     </div>
-
-
-
-
-
   </body>
 </html>

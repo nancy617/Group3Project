@@ -44,9 +44,9 @@
     </div>
   
   </div>
+<br/>
 
-
-  <div class="container" style="margin-bottom: 1000px;">
+  <div class="container" style="margin-bottom: 1070px;">
     <div class="col-md-6 col-md-offset-3">
       <form [formGroup]="profileForm" class="form" id="profileForm">
         <br>
@@ -72,22 +72,22 @@
         
         <br>
 
-        <h3>Upload your photo</h3>
-        <h4>Your picture must show your face clearly (Max. 5MB)</h4>
+        <h4>Please upload your photo</h4>
+        <p style="text-align: center;">Your picture must show your face clearly (Max. 5MB)</p>
         <span style = "margin-left: 69px;">
 
         <input  formControlName="file" (change)="uploadFile($event)" type="file" style="margin-top: 2px; " required> </span>
       <!-- IMAGE ADD --> 
       <br>
       <br>
-      <h3>Specify how you would like customers to pay</h3>
-      <h4>500 charceters maximum </h4>
+      <h4>Specify how you would like customers to pay</h4>
+      <p style="text-align: center;">500 charceters maximum </p>
       <input formControlName="chef_paymode" type="text" style="margin-top: 2px; width: 80%; size: 500" required> <br>
 
-      <h3>Introduce yourself so people can get to know you!</h3>
+      <h4>Introduce yourself so people can get to know you!</h4>
       <input formControlName="chef_description" type="text" style="margin-top: 2px; width: 80%; "  required> <br>
       </form>
-
+<br/>
       <button type="submit" (click)="createProfile()" style="margin-left: 170px;"><a> Continue to create your menu </a></button> <br><br>
     </div>
   </div>
