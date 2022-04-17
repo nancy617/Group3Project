@@ -8,3 +8,4 @@ __MACOSX
 *.old
 *.iml
 *.pack
+node_modules/__ngcc_entry_points__.json
