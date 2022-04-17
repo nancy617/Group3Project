@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseURL:"http://localhost:8080"
+  apiBaseURL:"http://ethniconnectbackendaws-env.eba-fa8ytper.us-east-2.elasticbeanstalk.com"
 
 };
 
