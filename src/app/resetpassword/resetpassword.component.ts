@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { ResetPasswordDataService } from 'src/network/dataServices/ResetPasswordDataServices';
 
 @Component({
@@ -10,28 +10,39 @@ import { ResetPasswordDataService } from 'src/network/dataServices/ResetPassword
 })
 export class ResetpasswordComponent implements OnInit {
 
-  registerForm = new FormGroup({
-    email: new FormControl('',[Validators.required, Validators.email]),
+  resetPasswordForm = new FormGroup({
+   // email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required]),
     confirmPassword:new FormControl('',[Validators.required ]),
   });
   submitted: boolean=false;
+  userId: any;
   constructor(private _ResetPasswordDataService: ResetPasswordDataService,
-    private router: Router ) { }
+    private router: Router,private activatedRoute: ActivatedRoute ) { 
+      
+    }
 
   ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.userId = params['email'];
+      console.log(this.userId);
+    });
   }
 
-  signup():void|boolean{
+  resetPassword():void|boolean{
+    
     this.submitted = true;
-    if (this.registerForm.invalid || this.registerForm.value.password != this.registerForm.value.confirmPassword ) {
-      return false;
-    }
-    this._ResetPasswordDataService.prepareRequestWithParameters(this.registerForm.value.email,this.registerForm.value.password)
+    // if (this.resetPasswordForm.invalid || this.resetPasswordForm.value.password != this.resetPasswordForm.value.confirmPassword ) {
+    //   return false;
+    // }
+   
+    //this._ResetPasswordDataService.prepareRequestWithParameters(this.resetPasswordForm.value.password)
     this._ResetPasswordDataService.queryTheServer({
-      emailId:this.registerForm.value.email,
-      newPwd:this.registerForm.value.password
-    }).subscribe({
+      emailId: this.userId,
+      newPwd:this.resetPasswordForm.value.password
+    }).subscribe(
+      
+      {
       next: resp=> this.router.navigate(['/Login']),
       error: err=>{
         console.log(err)
