@@ -11,42 +11,8 @@ import { FetchChefsForCuisinesAndZipCodeDataService } from 'src/network/dataServ
 export class FindChefComponent implements OnInit {
   zipCode:number=0
   cuisineId:number=0
-  chefs=[{
-    "loginid": 1,
-    "chef_fname": "chef abc",
-    "chef_lname": "fadf",
-    "chef_emailid": "faf1@com",
-    "chef_phone": "fsdf",
-    "chef_street": "fsdf",
-    "chef_city": "",
-    "chef_state": "fasdf",
-    "chef_zip": "",
-    "chef_paymode": "fsdf",
-    
-    "chef_description": "fsdf",
-    "chef_experience": 10,
-    "chef_fblink": " ",
-    "chef_linkdin": " ",
-    "chef_image": "/9j/4AAQSkZJRgABAQEBLAEsAAD"
-  },
-  {
-    "loginid": 1,
-    "chef_fname": "chef 123",
-    "chef_lname": "fadf",
-    "chef_emailid": "faf1@com",
-    "chef_phone": "fsdf",
-    "chef_street": "fsdf",
-    "chef_city": "",
-    "chef_state": "fasdf",
-    "chef_zip": "",
-    "chef_paymode": "fsdf",
-    "chef_description": "fsdf",
-    "chef_experience": 10,
-    "chef_fblink": " ",
-    "chef_linkdin": " ",
-    "chef_image": "/9j/4AAQSkZJRgABAQEBLAEsAAD"
-  }]
-
+  chefs: Array<any> = [];
+ 
 
   constructor(private _FetchChefsForCuisinesAndZipCodeDataService:FetchChefsForCuisinesAndZipCodeDataService,
     private _Activatedroute:ActivatedRoute,

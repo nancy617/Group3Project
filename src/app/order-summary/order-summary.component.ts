@@ -74,7 +74,8 @@ export class OrderSummaryComponent implements OnInit {
       orderItems: orders.map(item => {return {menu_id: item.menu.menuid, quantity:item.quantity}})
     }
     this.orderService.postOrder(orderData).subscribe(orderInfo => {
-      this.router.navigate(['/ThankYouForOrder'])
+      this.router.navigate(['/OrderHistory'])
+      
     })
   }
 

@@ -39,8 +39,12 @@ export class OrderHistoryComponent implements OnInit {
   }
 
   postRating() {
-    console.log(this.rating);
-    this.orderService.postOrderRating(this.rating)
+
+    Object.entries(this.rating).forEach(([orderid, ratings])=> {
+      console.log({orderid, ratings});
+      this.orderService.postOrderRating({orderid, ratings})
+      .subscribe()
+      })
   }
 
   cancelOrder() {
