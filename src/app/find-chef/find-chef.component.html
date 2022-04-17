@@ -17,7 +17,7 @@
       </div>
       <div class="exp">
         <b>Cooking Experience: {{chef.chef_experience}} y+</b><br/>
-        <ngb-rating [max]="5" [rate]="3" [readonly]="true"></ngb-rating><br/>
+        <ngb-rating [max]="5" [rate]="chef.avgRating ?? 3" [readonly]="true"></ngb-rating><br/>
         <span class="pay"><b>Method of pay: {{chef.chef_paymode}}</b> </span>
       </div>
       <a class="routingChef" [routerLink]="['/SelectMenu', chef.loginid]">Select</a>

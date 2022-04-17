@@ -25,7 +25,7 @@ export class OrderService {
   postOrderRating(rating:any){
     const headers = new HttpHeaders().
     set('accept', 'application/json')
-    return this.http.post(APIConstants.baseURL()+`/orderRating`, rating ,{headers})
+    return this.http.post(APIConstants.baseURL()+`/updateRating`, rating ,{headers})
 
   }
 }
