@@ -21,7 +21,7 @@
                 <div class="title">Delivered by<span>chef {{chef.chef_fname + " " + chef.chef_lname | titlecase}}</span></div>
               </div>
             <div class="chef-pic">
-              <img class="image1" [name]="chef.chef_image" [src]="chef.chef_image" width="100px" height="100px">             
+              <img class="image1" [name]="chef.chef_image" src="data:image/jpeg;base64,{{chef.chef_image}}"  width="60px" height="60px">             
             </div>
           </div>
           <img class="popup-foodImage" [src]="clickedMenu.menu_item_image">

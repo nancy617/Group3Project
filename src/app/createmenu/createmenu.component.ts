@@ -43,6 +43,12 @@ export class CreatemenuComponent implements OnInit {
   "cuisine_name": "Middle Eastern",
   "cuisine_image": "",
   "menus": []
+},
+{
+  "id": 6,
+  "cuisine_name": "Chinese",
+  "cuisine_image": "",
+  "menus": []
 }]
   myformGroup = new FormGroup({
     breakfast: new FormArray(
