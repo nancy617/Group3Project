@@ -14,4 +14,18 @@ export class OrderService {
           set('accept', 'application/json')
           return this.http.post(APIConstants.baseURL()+'/placeOrder' ,orderData, {headers})
   }
+
+  getOrdersByCustomerId() {
+    const cutomerId = localStorage.getItem('loginId')
+    const headers = new HttpHeaders().
+    set('accept', 'application/json')
+    return this.http.get(APIConstants.baseURL()+`/orderbyCustLoginId/${cutomerId}` ,{headers})
+  }
+
+  postOrderRating(rating:any){
+    const headers = new HttpHeaders().
+    set('accept', 'application/json')
+    return this.http.post(APIConstants.baseURL()+`/orderRating`, rating ,{headers})
+
+  }
 }

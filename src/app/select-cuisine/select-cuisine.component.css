@@ -43,9 +43,6 @@
 
    
 /*Styling for aligning checkboxes and text with images*/
-   input{
-       margin-top:100px;
-   }
 
    input.checkbox {
        margin-left:20%;
@@ -109,4 +106,19 @@ input.checkboxMiddleEastern {
     font-size: 30px;
     border: none;
     cursor: pointer;
+  }
+
+  .cuisine-container {
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  .cuisine-name {
+      text-align: center;
+  }
+
+  .cuisine {
+      margin: 10px 25px;
+      display: flex;
+      flex-direction: column;
   }

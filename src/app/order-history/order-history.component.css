@@ -1,7 +1,6 @@
 button {
     text-align: center;
     text-decoration: none;
-    float: right;
     margin: 10px;
     padding-right: 20px;
     background-color: rgb(260, 200, 40);
@@ -23,7 +22,7 @@ button {
   }
   
   table {
-    margin: 0 200px;
+    margin: 0 auto;
     border-radius: 2%;
     width: 1200px;
     height: 100px;
@@ -37,6 +36,7 @@ button {
   
   td {
     background-color: oldlace;
+    vertical-align: middle !important;
   }
   
   a {

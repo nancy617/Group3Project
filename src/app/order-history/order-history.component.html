@@ -1,13 +1,39 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Order Summary: {{viewOrder.orderid}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Cusisine</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Chef</th>
+        <th scope="col">Day</th>
+        <th scope="col">Category</th>
+      </tr>
+      </thead>
+      <tbody>    
+        <tr *ngFor="let item of viewOrder.orderItems">
+          <td>{{item.chefMenu.item_name}}</td>
+          <td>{{item.chefMenu.cuisineCategory.cuisine_name}}</td>
+          <td>{{item.chefMenu.menu_item_price | currency: 'USD'}}</td>
+          <td>{{item.quantity}}</td>
+          <td>{{item.chefMenu.chef.chef_fname + " " + item.chefMenu.chef.chef_lname }}</td>
+          <td>{{item.chefMenu.week}}</td>
+          <td>{{item.chefMenu.menucategories}}</td>
 
-    <!-- <script type="text/javascript" src="chefeditprofile.js"></script> -->
-  </head>
-  <body>
+        </tr>  
+      </tbody>
+      </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
     <div class="header"></div>
     <br />
 
@@ -18,70 +44,29 @@
       <span style="margin-left: 200px">
         <b>View your orders placed in </b></span
       >
-
-      <select style="font-size: 14px">
-        <option value="3 days">3 days</option>
-        <option value="1 week">1 week</option>
-        <option value="1 month">1 month</option>
-        <option value="6 months">6 months</option>
-        <option value="Over 6 months">Over 6 months</option>
-      </select>
-
-      <button style="margin-right: 200px">
-        <a href="Contact"> Contact Us</a>
-      </button>
-      <button><a href=" ">Go back to Homepage</a></button>
-      <br />
-
-      <table
-        style="
-          margin-left: 200px;
-          border-radius: 2%;
-          width: 1050px;
-          height: 100px;
-          border: rgb(260, 200, 40);
-          background-color: orange;
-        "
-      >
+      <table class="table table-striped">
+        <thead>
         <tr>
-          <th>Order Number</th>
-
-          <th>ORDER SUMMARY</th>
-          <th>
-            <a href="CancelOrder" style="color: darkblue"
-              ><u>CANCEL YOUR ORDER</u></a
-            >
-          </th>
-          <th>
-            <a href="WriteReview" style="color: darkblue"
-              ><u>WRITE A REVIEW</u></a
-            >
-          </th>
+          <th scope="col">Order Id</th>
+          <th scope="col">Date</th>
+          <th scope="col">Price</th>
+          <th scope="col">view order</th>
+          <th scope="col">Cancel</th>
+          <th scope="col">Review order</th>
         </tr>
-
-        <tr style="text-align: center">
-          <td>1</td>
-
-          <td>
-            <a href="OrderSummary" style="color: darkblue"
-              ><u>View Order Summary</u></a
-            >
-          </td>
-          <td style="color: brown">
-            (Order can be cancelled 4 hours before delivery.)
-          </td>
-          <td>
-            <a href="ViewChef" style="color: darkblue"><u>Meet the Chef</u></a>
-          </td>
-        </tr>
-        <br />
-      </table>
+        </thead>
+        <tbody>    
+          <tr *ngFor="let order of orders">
+            <td>{{order.orderid}}</td>
+            <td>{{order.order_date | date: 'medium'}}</td>
+            <td>{{order.order_amount | currency: 'USD'}}</td>
+            <td class="order-btn"><button class="btn view-order" (click)="showMenuModal(order)">View</button></td>
+            <td class="order-btn"><button class="btn view-order" (click)="cancelOrder()">Request Cancel</button></td>
+            <td><ngb-rating [max]="5" [(rate)]="rating[order.orderid]" (rateChange)="postRating()" (hover)="hovered=$event" (leave)="hovered=0" ></ngb-rating></td>
+          </tr>  
+        </tbody>
+        </table>
     </div>
-    <br /><br /><br />
-    <div class="box2">
-      <a class="next round">🔘</a>
-      <a class="previous round">⚫</a>
-      <a class="next round">🔘</a>
-    </div>
-  </body>
-</html>
+
+
+
