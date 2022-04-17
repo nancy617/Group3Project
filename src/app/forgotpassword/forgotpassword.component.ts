@@ -21,6 +21,7 @@ export class ForgotpasswordComponent implements OnInit {
   }
 
   forgotPassword():void|boolean{
+    
     this.submitted = true;
     if (this.forgotPasswordForm.invalid || this.forgotPasswordForm.value.password != this.forgotPasswordForm.value.confirmPassword ) {
       return false;
@@ -28,7 +29,14 @@ export class ForgotpasswordComponent implements OnInit {
     this._ForgotPasswordDataService.queryTheServer({
       emailId:this.forgotPasswordForm.value.email,
     }).subscribe({
-      next: resp=> this.router.navigate(['/resetpwdemailcomplete']),
+      
+      
+      next: resp=> 
+      {
+        const data:any=resp
+        localStorage.setItem('emaiId',data.emailId)
+        this.router.navigate(['/resetpwdemailcomplete'])
+    },
       error: err=>{
         console.log(err)
         alert(err.error.message)

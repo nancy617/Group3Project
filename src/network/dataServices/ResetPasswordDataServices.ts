@@ -54,7 +54,7 @@ export class ResetPasswordDataService {
       queryTheServer(data={}){
         const requestOptions:any = {};
         requestOptions['headers'] = this.requestHeaders();
-        return this.http.post(this.baseURL()+this.methodName() ,data, requestOptions);
+        return this.http.put(this.baseURL()+this.methodName() ,data, requestOptions);
       }
 
 }
