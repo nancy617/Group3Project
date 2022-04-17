@@ -36,8 +36,17 @@ export class LoginComponent implements OnInit {
         }
         if(data.chef)
         {
+          console.log(data.chef)
+          if(!data.chefProfile){
+          console.log(data.chef)
+          console.log(data.chefProfile)
           this.router.navigate(['/chefprofilesetup'])
+          return
         }
+        console.log(data.chef)
+        console.log(data.chefProfile)
+        this.router.navigate(['/createmenu'])
+      }
         else{
           this.router.navigate(['/EnterZipCode'])
         }
