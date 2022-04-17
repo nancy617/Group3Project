@@ -76,7 +76,7 @@ const routes: Routes = [
  {component:ThankYouForOrderComponent,path:"ThankYouForOrder", canActivate:[AuthGuard] },
  {component:CancelOrderComponent,path:"CancelOrder", canActivate:[AuthGuard] },
  {component:OrderCancelledComponent,path:"OrderCancelled", canActivate:[AuthGuard] },
- {component:FindChefComponent,path:"FindChef/:zipCode/:cuisineId"},
+ {component:FindChefComponent,path:""},
  {component:SelectMenuComponent,path:"SelectMenu/:chefId"},
  {component:OrderSummaryComponent,path:"OrderSummary"},
  {component:PersonalsignComponent,path:"personalsign"},

@@ -1,5 +1,10 @@
-<br>
-<img src="assets/Images/step5.png" alt="foodhome" width="1000px" style="margin-left: 220px" />
+<br />
+<img
+  src="assets/Images/step5.png"
+  alt="foodhome"
+  width="1000px"
+  style="margin-left: 220px"
+/>
 
 <br /><br />
 <h1>View Your Order Summary</h1>
@@ -7,17 +12,26 @@
 <div class="cart">
   <div class="cart-item" *ngFor="let item of cartService.cart">
     <div class="menu-img">
-      <img class="foodImage" [src]="item.menu.menu_item_image" width="200px" height="200px" />
+      <img
+        class="foodImage"
+        [src]="item.menu.menu_item_image"
+        width="200px"
+        height="200px"
+      />
     </div>
     <div class="menu-details">
       <div class="menu-title">
-        <h3 class="foodInfo"> {{item.menu.item_name}} </h3>
+        <h3 class="foodInfo">{{ item.menu.item_name }}</h3>
       </div>
       <div class="menu-info">
-        <span class="price">{{item.menu.menu_item_price*item.quantity | currency:'USD'}}</span>
+        <span class="price">{{
+          item.menu.menu_item_price * item.quantity | currency: "USD"
+        }}</span>
         <div class="menu-action">
-          <button class="sub" (click)="reduceQuantity(item.menu)">&#8722;</button><span>{{item.quantity}}</span><button
-            class="add" (click)="increaseQuantity(item.menu)">+</button>
+          <button class="sub" (click)="reduceQuantity(item.menu)">
+            &#8722;</button
+          ><span>{{ item.quantity }}</span
+          ><button class="add" (click)="increaseQuantity(item.menu)">+</button>
         </div>
       </div>
     </div>
@@ -30,25 +44,25 @@
     <tbody>
       <tr>
         <td class="field">Discount</td>
-        <td class="value">{{0 | currency:'USD'}}</td>
+        <td class="value">{{ 0 | currency: "USD" }}</td>
       </tr>
       <tr>
         <td class="field">Delivery Fee</td>
-        <td class="value">{{0 | currency:'USD'}}</td>
+        <td class="value">{{ 0 | currency: "USD" }}</td>
       </tr>
       <tr>
         <td class="field">Tax(6%)</td>
-        <td class="value">{{getTaxValue() | currency:'USD'}}</td>
+        <td class="value">{{ getTaxValue() | currency: "USD" }}</td>
       </tr>
       <tr class="total">
         <td class="field">Total</td>
-        <td class="value">{{getOrderValue() | currency:'USD'}}</td>
+        <td class="value">{{ getOrderValue() | currency: "USD" }}</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<hr class="solid" />
+<hr class="solid" style="width: 1200px; margin-left: 100px" />
 
 <!--Order Times and Personal Requests-->
 
@@ -63,7 +77,9 @@
       <td></td>
       <td></td>
 
-      <label for="pickupTimes">Select a Pickup Time:</label>
+      <label for="pickupTimes" style="margin-bottom: 140px"
+        >Select a Pickup Time:</label
+      >
       <select name="pickupTimes" id="pickupBreakfast">
         <option value="volvo">8:00am - 8:45am</option>
         <option value="saab">9:00am - 9:45am</option>
@@ -73,8 +89,14 @@
       <td></td>
       <td></td>
 
-      <textarea class="textBar" id="breakfastRequest" rows="4" cols="50"
-        placeholder="Enter your requests for Breakfast"></textarea>
+      <textarea
+        style="margin-top: 50px"
+        class="textBar"
+        id="breakfastRequest"
+        rows="4"
+        cols="50"
+        placeholder="Enter your requests for Breakfast"
+      ></textarea>
     </tr>
   </table>
 </div>
@@ -88,7 +110,9 @@
       <td></td>
       <td></td>
 
-      <label for="pickupTimes">Select a Pickup Time:</label>
+      <label for="pickupTimes" style="margin-bottom: 90px"
+        >Select a Pickup Time:</label
+      >
       <select name="pickupTimes" id="pickupLunch">
         <option value="volvo">11:00am - 11:45am</option>
         <option value="saab">12:00pm - 12:45pm</option>
@@ -98,8 +122,14 @@
       <td></td>
       <td></td>
 
-      <textarea class="textBar" id="lunchRequest" rows="4" cols="50"
-        placeholder="Enter your requests for lunch"></textarea>
+      <textarea
+        style="margin-left: 50px"
+        class="textBar"
+        id="lunchRequest"
+        rows="4"
+        cols="50"
+        placeholder="Enter your requests for lunch"
+      ></textarea>
     </tr>
   </table>
 </div>
@@ -113,7 +143,9 @@
       <td></td>
       <td></td>
 
-      <label for="pickupTimes">Select a Pickup Time:</label>
+      <label for="pickupTimes" style="margin-bottom: 90px"
+        >Select a Pickup Time:</label
+      >
       <select name="pickupTimes" id="pickupDinner">
         <option value="volvo">4:00pm - 4:45pm</option>
         <option value="saab">5:00pm - 5:45pm</option>
@@ -123,12 +155,18 @@
       <td></td>
       <td></td>
 
-      <textarea class="textBar" id="dinnerRequest" rows="4" cols="50"
-        placeholder="Enter your requests for Dinner"></textarea>
+      <textarea
+        style="margin-left: 50px"
+        class="textBar"
+        id="dinnerRequest"
+        rows="4"
+        cols="50"
+        placeholder="Enter your requests for Dinner"
+      ></textarea>
     </tr>
   </table>
 </div>
-
+<br /><br />
 <hr class="solid" />
 
 <!--Order Pickup location and Payment Request-->
@@ -140,15 +178,25 @@
       <td class="infoHeadText">Chef Payment Instructions:</td>
     </tr>
     <tr>
-      <td class="infoText">{{chef.chef_street + ' ' + chef.chef_city + ', ' + chef.chef_state + ' ' + chef.chef_zip}}</td>
-      <td class="infoText">{{chef.chef_paymode}}</td>
+      <td class="infoText">
+        {{
+          chef.chef_street +
+            " " +
+            chef.chef_city +
+            ", " +
+            chef.chef_state +
+            " " +
+            chef.chef_zip
+        }}
+      </td>
+      <td class="infoText">{{ chef.chef_paymode }}</td>
     </tr>
   </table>
 </div>
 
 <hr class="solid" />
 
-<div style="margin-bottom: -300px;">
+<div style="margin-bottom: -300px">
   <nav>
     <a class="routing" (click)="navigatePreviousPage()">Back</a>
     <a class="routing" (click)="placeOrder()">Continue</a>
