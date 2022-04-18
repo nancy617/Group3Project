@@ -118,8 +118,10 @@ export class CreatemenuComponent implements OnInit {
         validFormData.push({...form.value,
           menucategories:formArr})
       }
-
+    
     }
+    //this.router.navigate(['/chefviewprofile'])
+    alert('your menu has been added successfully')
   }
   console.log(validFormData)
   if(validFormData.length>0){
@@ -129,11 +131,13 @@ export class CreatemenuComponent implements OnInit {
       menu:validFormData,
       week:this.activeDay}).subscribe(
         {next:res=>{
+         
           this.router.navigate(['/chefviewprofile'])
         },
         error:err=>console.log(err)}
       )
   }
+  
     
   }
 
@@ -162,5 +166,6 @@ export class CreatemenuComponent implements OnInit {
     }
 
   }
+  
 
 }
