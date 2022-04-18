@@ -1,16 +1,16 @@
 <img src="assets/Images/step2.png" alt="foodhome" width="1000px" style="margin-left: 200px; border-radius: 0%">
 
 <!--Rest of the CuisineSelect page-->
-<h1>Types of Cuisine</h1>
-<h2 style="text-align: center;">Select One Type of Cuisine</h2>
+<h1>Pick a Cuisine</h1><br>
+<!-- <h2 style="text-align: center;">Select One Type of Cuisine</h2> -->
 <div class="cuisine-container" >
 <div *ngFor="let cuisine of cuisines" class="cuisine">
         
         <!-- <img class="image1" [name]="cuisine.cuisine_name" src="assets/Images/temporaryFoodImage.png" width="200px" height="200px">-->
         <img class="image1" [name]="cuisine.cuisine_image" src="data:image/jpeg;base64,{{cuisine.cuisine_image}}"
-            width="200px" height="200px">
+            width="150px" height="150px">
             <div class="cuisine-name">
-                <input type="radio" id="css" name="fav_language" [value]="cuisine.id" (click)="selectCuisine(cuisine.id)">
+                <input type="radio" id="css" name="fav_language" [value]="cuisine.id" (click)="selectCuisine(cuisine.id)" style="height:20px; width:20px; vertical-align: middle;" >
                 <label class="label" [for]="cuisine.cuisine_name"> {{cuisine.cuisine_name}}</label>
                 <!-- <img class="image1" [name]="cuisine.cuisine_name" src="assets/Images/temporaryFoodImage.png" width="200px" height="200px">-->
             </div>
@@ -58,7 +58,11 @@
    <a class="routing" href="EnterZipCode">Back</a>
         <a class="routing" href="FindChef">Continue</a>
     </nav> !-->
-        <nav style="margin-bottom: -325px; margin-left: 300px;">
+        <!-- <nav style="margin-bottom: -325px; margin-left: 300px;">
+            <a class="routing" (click)="goToNextStep()">Continue</a>
+        </nav> -->
+        <nav>
             <a class="routing" (click)="goToNextStep()">Continue</a>
         </nav>
     </div>
+    
