@@ -11,7 +11,9 @@ input[type="text"] {
   list-style: none;
   float: left;
 }
-select:hover { background-color: orange;}
+select:hover {
+  background-color: white;
+}
 
 .box2 {
   width: 1200px;
