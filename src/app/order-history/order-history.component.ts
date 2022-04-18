@@ -55,7 +55,7 @@ export class OrderHistoryComponent implements OnInit {
   }
 
   cancelOrder() {
-    alert('Order cancelled')
+    alert('Please reach out to the chef for order cancellation')
   }
 
 }
