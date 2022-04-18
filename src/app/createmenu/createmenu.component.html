@@ -11,7 +11,7 @@
       <ul>
         <li></li>
         <li style="margin-left: 190px">
-          <br /><br/>
+          <br /><br />
           <h2><b> Here is where you will customize your menu!</b></h2>
         </li>
         <li style="margin-left: 236px">
@@ -32,7 +32,7 @@
           <br /><br />
           <h1
             style="
-              margin-left: 100px;
+              margin-left: 20px;
               text-align: center;
               color: rgb(260, 200, 40);
             "
@@ -61,12 +61,17 @@
 
         <br />
 
+
         <h1 style="margin-left: 100px; text-align: center">
         
         </h1>
+        <!-- <h1 style="margin-left: 100px; text-align: center">
+          Ethni-Cuisine Menu
+        </h1> -->
+
       </ul>
     </div>
-
+    <br /><br /><br />
     <div class="box2" [formGroup]="myformGroup">
       <div formArrayName="breakfast">
         <li>
@@ -93,6 +98,7 @@
                 formControlName="menu_item_image"
                 name=""
                 id=""
+                style="margin-bottom: 8px"
               />
               <input
                 formControlName="item_name"
@@ -100,9 +106,9 @@
                 id="foodname"
                 name="foodname"
                 placeholder="Name of food"
-                size="10"
+                size="12"
                 style="
-                  font-size: 14px;
+                  font-size: 10px;
                   background-color: lightgray;
                   float: left;
                   text-align: center;
@@ -115,20 +121,23 @@
                 id="prize"
                 name="prize"
                 placeholder="Price $"
-                size="8"
                 style="
-                  font-size: 14px;
+                  font-size: 10px;
                   background-color: lightgray;
-                  margin-left: 10px;
+                  margin-left: 8px;
                   float: left;
                   text-align: center;
                 "
-              /><br /><br />
+              /><br />
               <textarea
                 formControlName="item_ingredients"
                 name="item_ingredients"
                 form="usrform"
-                style="background-color: lightgray; color: gray"
+                style="
+                  background-color: lightgray;
+                  color: gray;
+                  margin-top: 8px;
+                "
                 placeholder="Enter food Ingredients here..."
               ></textarea>
               <textarea
@@ -170,6 +179,7 @@
                 formControlName="menu_item_image"
                 name=""
                 id=""
+                style="margin-bottom: 8px"
               />
               <input
                 formControlName="item_name"
@@ -177,9 +187,9 @@
                 id="foodname"
                 name="foodname"
                 placeholder="Name of food"
-                size="10"
+                size="12"
                 style="
-                  font-size: 14px;
+                  font-size: 10px;
                   background-color: lightgray;
                   float: left;
                   text-align: center;
@@ -194,18 +204,22 @@
                 placeholder="Price $"
                 size="8"
                 style="
-                  font-size: 14px;
+                  font-size: 10px;
                   background-color: lightgray;
-                  margin-left: 10px;
+                  margin-left: 8px;
                   float: left;
                   text-align: center;
                 "
-              /><br /><br />
+              /><br />
               <textarea
                 formControlName="item_ingredients"
                 name="fooddescription"
                 form="usrform"
-                style="background-color: lightgray; color: gray"
+                style="
+                  background-color: lightgray;
+                  color: gray;
+                  margin-top: 8px;
+                "
                 placeholder="Enter food Ingredients here..."
               ></textarea>
               <textarea
@@ -247,6 +261,7 @@
                 formControlName="menu_item_image"
                 name=""
                 id=""
+                style="margin-bottom: 8px"
               />
               <input
                 formControlName="item_name"
@@ -254,9 +269,9 @@
                 id="foodname"
                 name="foodname"
                 placeholder="Name of food"
-                size="10"
+                size="14"
                 style="
-                  font-size: 14px;
+                  font-size: 10px;
                   background-color: lightgray;
                   float: left;
                   text-align: center;
@@ -271,18 +286,22 @@
                 placeholder="Price $"
                 size="8"
                 style="
-                  font-size: 14px;
+                  font-size: 10px;
                   background-color: lightgray;
-                  margin-left: 10px;
+                  margin-left: 5px;
                   float: left;
                   text-align: center;
                 "
-              /><br /><br />
+              />
               <textarea
                 formControlName="item_ingredients"
                 name="fooddescription"
                 form="usrform"
-                style="background-color: lightgray; color: gray"
+                style="
+                  background-color: lightgray;
+                  color: gray;
+                  margin-top: 8px;
+                "
                 placeholder="Enter food Ingredients here..."
               ></textarea>
               <textarea
@@ -298,7 +317,7 @@
       </div>
     </div>
 
-    <div style="margin-bottom: -400px; margin-left: 50px;">
+    <div style="margin-bottom: -400px; margin-left: 50px">
       <button
         type="submit"
         (click)="addMenu()"

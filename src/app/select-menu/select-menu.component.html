@@ -49,9 +49,9 @@
     <div class="nomenu">
         Menu for the day yet to be added!!!
     </div>
-</ng-template>
+</ng-template><br/><br/>
 <h3>Ethni-Cuisine Menu</h3>
-<div class="menu-container" *ngIf="!isMenuEmpty; else noMenu">
+<div class="menu-container" *ngIf="!isMenuEmpty; else noMenu" >
     <div class="meal breakfast" *ngIf="Breakfast.length">
         <div class="weekday">Breakfast</div>
         <div class="menu" *ngFor="let menu of Breakfast" >
@@ -85,7 +85,7 @@
     </div>
 </div>
 
-<div>
+<div style="margin-bottom: -300px;">
     <nav>
         <a class="routing" (click)="navigatePreviousPage()">Back</a>
         <a class="routing" (click)="goToOrderSummary()">Continue</a>
